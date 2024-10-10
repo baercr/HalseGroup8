@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
 
     public void OnButtonQuit() 
     { 
-        Application.Quit();
+        Application.Quit ();
     }
 
     public void OnButtonMainMenu()

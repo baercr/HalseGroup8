@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShiftSelection.unity
     guid: 4aaaef9c6858a004a9056cfd89864c7d
+  - enabled: 1
+    path: Assets/Scenes/InGame.unity
+    guid: adc35ff4742391e46a27af72b9f144df
   m_configObjects: {}

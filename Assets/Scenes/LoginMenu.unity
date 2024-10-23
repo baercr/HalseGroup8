@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 394258289}
   - component: {fileID: 394258288}
   m_Layer: 5
-  m_Name: Prompt
+  m_Name: txtPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2456,7 +2456,7 @@ GameObject:
   - component: {fileID: 2098544652}
   - component: {fileID: 2098544651}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: txtTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

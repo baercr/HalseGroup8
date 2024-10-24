@@ -7,12 +7,17 @@ public class Menu : MonoBehaviour
 {
     public void OnButtonStart() 
     {
-        SceneManager.LoadScene(4);      // Loads Shift Selection
+        SceneManager.LoadScene(3);      // Loads Shift Selection
     }
 
     public void OnButtonQuit() 
     { 
         Application.Quit ();            // Quits Game, will not quit if running from editor
+    }
+
+    public void OnButtonMenu()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void OnButtonMainMenu()
@@ -22,7 +27,7 @@ public class Menu : MonoBehaviour
 
     public void OnShiftSelect() 
     { 
-        SceneManager.LoadScene (3);     // Loads Game Scene
+        SceneManager.LoadScene (4);     // Loads Game Scene
     }
 
     public void OnButtonRegister() 

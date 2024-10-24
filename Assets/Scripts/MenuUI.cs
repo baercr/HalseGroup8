@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void OnButtonStart() 
     {
-        SceneManager.LoadScene(1);      // Loads Shift Selection
+        SceneManager.LoadScene(4);      // Loads Shift Selection
     }
 
     public void OnButtonQuit() 
@@ -22,6 +22,16 @@ public class Menu : MonoBehaviour
 
     public void OnShiftSelect() 
     { 
-        SceneManager.LoadScene (2);     // Loads Game Scene
+        SceneManager.LoadScene (3);     // Loads Game Scene
+    }
+
+    public void OnButtonRegister() 
+    {
+        SceneManager.LoadScene(1);      // Opens Register Screen
+    }
+
+    public void OnButtonLogin()
+    {
+        SceneManager.LoadScene(2);      // Opens Login Screen
     }
 }

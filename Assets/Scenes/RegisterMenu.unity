@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 606973392}
   - component: {fileID: 606973391}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: NameInputField (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 1433627369}
   - component: {fileID: 1433627368}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: PasswordInputField (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,6 +2070,7 @@ GameObject:
   - component: {fileID: 1497346395}
   - component: {fileID: 1497346394}
   - component: {fileID: 1497346398}
+  - component: {fileID: 1497346399}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2177,6 +2178,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbe54feebeeca147bb7c06077955000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1497346399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497346393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14321368505debe4e95faeac67735cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 606973391}
+  passwordField: {fileID: 1433627368}
+  btnRegister: {fileID: 2051734498}
 --- !u!1 &1798510946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,7 +2405,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2051734499}
   m_OnClick:
     m_PersistentCalls:

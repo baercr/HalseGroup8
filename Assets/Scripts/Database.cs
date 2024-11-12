@@ -58,7 +58,7 @@ public class Web : MonoBehaviour
     }
 
    
-    IEnumerator Login(string playerName, string playerPassword)
+    public IEnumerator Login(string playerName, string playerPassword)
     {
         List<IMultipartFormSection> form = new List<IMultipartFormSection>();
         form.Add(new MultipartFormDataSection("loginUser", playerName));
@@ -82,7 +82,7 @@ public class Web : MonoBehaviour
         }
     }
 
-    IEnumerator Register(string playerName, string playerPassword)
+    public IEnumerator Register(string playerName, string playerPassword)
     {
         List<IMultipartFormSection> form = new List<IMultipartFormSection>();
         form.Add(new MultipartFormDataSection("loginUser", playerName));

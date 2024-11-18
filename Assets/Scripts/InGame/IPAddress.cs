@@ -38,4 +38,9 @@ public class IPAddressManager : MonoBehaviour
 
         return ipAddresses[index];
     }
+
+    public string AddIPAddress(string ipAddress) 
+    {
+        return ipAddress;
+    }
 }

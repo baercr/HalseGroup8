@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Networking;
+using Unity.VisualScripting;
 
 public class Web : MonoBehaviour
 {
@@ -107,5 +108,28 @@ public class Web : MonoBehaviour
 
     public void VerifyInputs() {
         btnRegister.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 5);
+    }
+
+    public IEnumerator GetLevelData(string levelID) 
+    {
+        List<IMultipartFormSection> form = new List<IMultipartFormSection>();
+        form.Add(new MultipartFormDataSection("shiftSelected", levelID)); //  "php_variablename", GetLevelData(var dbColumnName)
+
+        UnityWebRequest myWr = UnityWebRequest.Post("http://localhost/UnityDB/GetLevelData.php", form);
+        yield return myWr.SendWebRequest();
+
+        if (myWr.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(myWr.error);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+        else
+        {
+            // Show results as text
+            Debug.Log(myWr.downloadHandler.text);
+
+            // Show results as binary data
+            byte[] results = myWr.downloadHandler.data;
+        }
     }
 }

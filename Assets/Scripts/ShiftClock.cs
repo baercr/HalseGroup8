@@ -13,25 +13,25 @@ public class CountdownClock : MonoBehaviour
     void Start()
     {
         currentTime = startTimeInSeconds;
-        UpdateCountdownText();
+        UpdateCountupText();
     }
 
     void Update()
     {
-        if (currentTime > 0)
+        if (currentTime < 1440)
         {
-            currentTime -= Time.deltaTime;
-            UpdateCountdownText();
+            currentTime += Time.deltaTime;
+            UpdateCountupText();
         }
         else
         {
             currentTime = 0;
-            UpdateCountdownText();
+            UpdateCountupText();
             // Optionally, add any actions to perform when the countdown reaches zero
         }
     }
 
-    void UpdateCountdownText()
+    void UpdateCountupText()
     {
         int minutes = Mathf.FloorToInt(currentTime / 60);
         int seconds = Mathf.FloorToInt(currentTime % 60);

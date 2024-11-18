@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TabPanelController : MonoBehaviour
+public class SOPPanelController : MonoBehaviour
 {
-    public GameObject panelConfirmation; // The panel you want to show/hide
+    public GameObject panelSOP; // The panel you want to show/hide
     public Button buttonToggle; // The button that acts as the tab
 
     void Start()
     {
         // Ensure the panel is initially hidden
-        panelConfirmation.SetActive(false);
+        panelSOP.SetActive(false);
 
         // Add a listener to the button to call the TogglePanel function when clicked
         buttonToggle.onClick.AddListener(TogglePanel);
@@ -18,7 +18,6 @@ public class TabPanelController : MonoBehaviour
     void TogglePanel()
     {
         // Toggle the panel's active state
-        panelConfirmation.SetActive(!panelConfirmation.activeSelf);
+        panelSOP.SetActive(!panelSOP.activeSelf);
     }
 }
-

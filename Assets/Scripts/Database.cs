@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,7 +16,7 @@ public class Web : MonoBehaviour
         // StartCoroutine(GetDate());
         // StartCoroutine(GetUsers());
         // StartCoroutine(Login("test1","123456"));
-        StartCoroutine(Register("testAdd","123456"));
+        // StartCoroutine(RegisterUser("testAdd","123456"));
     }
 
     IEnumerator GetUsers() {
@@ -82,13 +81,13 @@ public class Web : MonoBehaviour
         }
     }
 
-    public IEnumerator Register(string playerName, string playerPassword)
+    public IEnumerator RegisterUser(string playerName, string playerPassword)
     {
         List<IMultipartFormSection> form = new List<IMultipartFormSection>();
         form.Add(new MultipartFormDataSection("loginUser", playerName));
         form.Add(new MultipartFormDataSection("loginPass", playerPassword));
 
-        UnityWebRequest myWr = UnityWebRequest.Post("http://localhost/UnityDB/RegisterUsers.php", form);
+        UnityWebRequest myWr = UnityWebRequest.Post("http://localhost/UnityDB/RegisterUser.php", form);
         yield return myWr.SendWebRequest();
 
         if (myWr.result == UnityWebRequest.Result.ConnectionError)

@@ -9,8 +9,7 @@ public class Main : MonoBehaviour
     public Web Web;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         Instance = this;
         Web = GetComponent<Web>();
     }

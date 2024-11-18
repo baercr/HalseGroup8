@@ -1,11 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountdownClock : MonoBehaviour
 {
     public int startTimeInSeconds = 60; // Set the starting time in seconds
     private float currentTime;
-    public Text countdownText; // Reference to the UI Text component
+    public TextMeshProUGUI countdownText; // Reference to the UI Text component
 
     void Start()
     {

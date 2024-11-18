@@ -61,7 +61,7 @@ public class Web : MonoBehaviour
     {
         List<IMultipartFormSection> form = new List<IMultipartFormSection>();
         form.Add(new MultipartFormDataSection("loginUser", playerName));
-        form.Add(new MultipartFormDataSection("loginPass", playerPassword));
+        form.Add(new MultipartFormDataSection("loginPassword", playerPassword));
 
         UnityWebRequest myWr = UnityWebRequest.Post("http://localhost/UnityDB/Login.php", form);
         yield return myWr.SendWebRequest();
@@ -85,7 +85,7 @@ public class Web : MonoBehaviour
     {
         List<IMultipartFormSection> form = new List<IMultipartFormSection>();
         form.Add(new MultipartFormDataSection("loginUser", playerName));
-        form.Add(new MultipartFormDataSection("loginPass", playerPassword));
+        form.Add(new MultipartFormDataSection("loginPassword", playerPassword));
 
         UnityWebRequest myWr = UnityWebRequest.Post("http://localhost/UnityDB/RegisterUser.php", form);
         yield return myWr.SendWebRequest();

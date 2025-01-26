@@ -7,25 +7,39 @@ using UnityEngine.UI;
 
 public class IPAddressGenerator : MonoBehaviour
 {
-    public TextMeshProUGUI ipAddress;
+    public TextMeshProUGUI txtBusinessIP;
+    public TextMeshProUGUI txtTestIP;
+
+    private string ipBusiness;
+    private string ipTest;
+
     int octect;
     private string ip;
 
-    private string ipConfirm;
-    private string ipTest;
-    
-
     // Start is called before the first frame update
     void Start() {
+        int num;
 
         CreateIP();
-        ipConfirm = ip;
-        ipAddress.text = ipConfirm;
-        Debug.Log("The company's IP is: " + ipConfirm);
+        ipBusiness = ip;
+        txtBusinessIP.text = ipBusiness;
+        // Debug.Log("The company's IP is: " + ipBusiness);
 
-        CreateIP();
-        ipTest = ip;
-        Debug.Log("The IP to test is: " + ipTest);
+        num = Random.Range(0, 3);
+
+        if (num != 0)
+        {
+            CreateIP();
+            ipTest = ip;
+            txtTestIP.text = ipTest;
+            // Debug.Log("The IP to test is: " + ipTest);
+        }
+
+        else
+        {
+            ipTest = ipBusiness;
+            txtTestIP.text = ipTest;
+        }
 
     }
 

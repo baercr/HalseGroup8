@@ -6,21 +6,21 @@ using TMPro;
 
 public class ModeSelect : MonoBehaviour
 {
-    public GameObject btnShift1;
-    public GameObject btnShift2;        
-    public GameObject btnShift3;        
-    public GameObject btnShift4;
-    public GameObject btnShift5;        
-    public GameObject btnShift6;        
-    public GameObject btnShift7;  
-    public GameObject btnShift8;
-    public GameObject btnShift9;
-    public GameObject btnShift10;
+    public Button btnShift1;
+    public Button btnShift2;        
+    public Button btnShift3;        
+    public Button btnShift4;
+    public Button btnShift5;        
+    public Button btnShift6;        
+    public Button btnShift7;  
+    public Button btnShift8;
+    public Button btnShift9;
+    public Button btnShift10;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void OnbtnShift1()
+    { 
+    
     }
 
     // Update is called once per frame

@@ -21,9 +21,7 @@ public class IPAddressGenerator : MonoBehaviour
             ipOctect[i] = octect;
         }
 
-        //ipOctect.IntToString();
+        ipAddress.text = ipOctect[0] + "." + ipOctect[1] + "." + ipOctect[2] + "." + ipOctect[3];
 
-        Debug.Log("Your random IP address is: " + ipOctect[0] + "." + ipOctect[1] + "." + ipOctect[2] + "." + ipOctect[3]);
-        //Debug.Log("Your random IP address is: " + ipOctect);
     }
 }

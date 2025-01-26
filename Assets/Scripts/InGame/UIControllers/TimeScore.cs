@@ -29,7 +29,7 @@ public class CountdownClock : MonoBehaviour
     {
         if (currentTime < 960)
         {
-            Debug.Log(currentTime);
+            //Debug.Log(currentTime);
             currentTime += Time.deltaTime;
             UpdateCountupText();
         }

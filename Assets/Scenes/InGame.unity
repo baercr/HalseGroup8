@@ -387,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38888059}
   m_Layer: 5
-  m_Name: SOP
+  m_Name: Daily Standup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

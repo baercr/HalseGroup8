@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using TMPro; 
 
 public class UsernameGenerator : MonoBehaviour
 {
+    public TMP_Text usernameText; 
+
     void Start()
     {
         string username = GenerateRandomUsername();
-        Debug.Log("Username: " + username);
+        usernameText.text = "Username: " + username;
     }
 
     string GenerateRandomUsername()

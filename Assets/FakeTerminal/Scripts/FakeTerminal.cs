@@ -149,6 +149,7 @@ public class FakeTerminal : MonoBehaviour
     private bool terminalStarting;
     private bool terminalIsIdling;
     private bool cursorVisible;
+
     //  Variables used to control the terminal state.
     private bool lockCamera;
     private bool oldPositionSaved;

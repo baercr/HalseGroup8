@@ -8,6 +8,8 @@ public class SoftwareWhitelist : MonoBehaviour
     private bool[,] appArray = new bool[5, 5];
     private Texture2D[,] imageArray = new Texture2D[5, 5];
 
+    public GameObject WhitelistImage;
+
     void Start()
     {
         // Initialize appArray with true (approved/whitelisted)

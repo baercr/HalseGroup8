@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 9bb4b33064c8f854488dbe077ca97995
+guid: 78e91dc19e0a2ae4cb13fbaa58512c38
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - WhitelistImage: {fileID: 3812678264674934816, guid: befe513c9490e3f439c64ea98198ebbf, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

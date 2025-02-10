@@ -43,6 +43,10 @@ public class IPAddressGenerator : MonoBehaviour
 
     }
 
+    void Update() { 
+        
+    }
+
     private string CreateIP() {
 
         int[] ipOctect = new int[4];

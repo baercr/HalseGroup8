@@ -27,7 +27,7 @@ public class NameAndUsernameGenerator : MonoBehaviour
 
     void ReadNamesFromFile()
     {
-        string namesFilePath = Path.Combine(Application.dataPath, namesFileName);
+        string namesFilePath = Path.Combine(Application.dataPath, "Mode_ProfileCheck",namesFileName);
         string[] lines = File.ReadAllLines(namesFilePath);
         firstNames = new string[3];
         lastNames = new string[3];

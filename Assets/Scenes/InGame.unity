@@ -527,7 +527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 545, y: -411}
+  m_AnchoredPosition: {x: 657, y: -411}
   m_SizeDelta: {x: 355.7802, y: 68.6936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888539325
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 1730468083}
   - component: {fileID: 1730468082}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,10 +762,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1514079120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 626, y: 6}
-  m_SizeDelta: {x: -1314.7848, y: -448.647}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -595, y: 6}
+  m_SizeDelta: {x: 1127.2152, y: 631.353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730468082
 MonoBehaviour:

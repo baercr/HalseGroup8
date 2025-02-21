@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/RegisterMenu.unity
+    path: Assets/Scenes/Login/RegisterMenu.unity
     guid: e4bf65ef420da394fb7b6150418b9600
   - enabled: 1
-    path: Assets/Scenes/LoginMenu.unity
+    path: Assets/Scenes/Login/LoginMenu.unity
     guid: a880045a853e6644baaab2a1faa57b1b
   - enabled: 1
     path: Assets/Scenes/ShiftSelection.unity

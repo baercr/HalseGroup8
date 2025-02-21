@@ -25,11 +25,6 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(0);      // Loads Menu Screen
     }
 
-    public void OnShiftSelect() 
-    { 
-        SceneManager.LoadScene (4);     // Loads Game Scene
-    }
-
     public void OnButtonRegister() 
     {
         SceneManager.LoadScene(1);      // Opens Register Screen

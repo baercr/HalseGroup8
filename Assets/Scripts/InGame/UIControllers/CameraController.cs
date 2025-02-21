@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     }
 
     void ZoomClicked() {
-        Debug.Log("Zoom button clicked.");
+        //Debug.Log("Zoom button clicked.");
         cam1.enabled = !cam1.enabled;
         cam2.enabled = !cam2.enabled;
     }

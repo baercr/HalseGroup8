@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PCController : MonoBehaviour
 {
-    public Button[] buttons;
+    public Button[] button;
 
     // Start is called before the first frame update
     void Start()
@@ -17,28 +17,28 @@ public class PCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        buttons[0].onClick.AddListener(OnApp0Clicked);
-        buttons[1].onClick.AddListener(OnApp1Clicked);
-        buttons[2].onClick.AddListener(OnApp2Clicked);
-        //buttons[3].onClick.AddListener(OnApp3Clicked);
+        button[0].onClick.AddListener(OnApp0Clicked);
+        button[1].onClick.AddListener(OnApp1Clicked);
+        button[2].onClick.AddListener(OnApp2Clicked);
+        //button[3].onClick.AddListener(OnApp3Clicked);
     }
 
-    private void OnApp0Clicked()
+    public void OnApp0Clicked()
     {
         SceneManager.LoadScene(2);
     }
 
-    private void OnApp1Clicked()
+    public void OnApp1Clicked()
     {
         SceneManager.LoadScene(3);
     }
 
-    private void OnApp2Clicked()
+    public void OnApp2Clicked()
     {
         SceneManager.LoadScene(4);
     }
 
-    /*private void OnApp3Clicked()
+    /*public void OnApp3Clicked()
     {
         SceneManager.LoadScene();
     }*/

@@ -1278,7 +1278,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785317187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1359,6 +1359,7 @@ GameObject:
   - component: {fileID: 846766390}
   - component: {fileID: 846766392}
   - component: {fileID: 846766391}
+  - component: {fileID: 846766393}
   m_Layer: 5
   m_Name: UIController
   m_TagString: Untagged
@@ -1413,6 +1414,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelConfirmation: {fileID: 1564182964}
   buttonToggle: {fileID: 139243062}
+--- !u!114 &846766393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846766389}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f2e15c352693f4ab7796dbe20aa5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeInSeconds: 480
+  countupText: {fileID: 942991495}
+  panelResults: {fileID: 0}
+  panelTools: {fileID: 0}
+  panelConfirmation: {fileID: 1224215371}
+  panelSOP: {fileID: 111508856}
+  panelTicketQueue: {fileID: 0}
 --- !u!1 &942991492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1444,6 @@ GameObject:
   - component: {fileID: 942991493}
   - component: {fileID: 942991496}
   - component: {fileID: 942991495}
-  - component: {fileID: 942991494}
   m_Layer: 5
   m_Name: txtTime
   m_TagString: Untagged
@@ -1451,25 +1470,6 @@ RectTransform:
   m_AnchoredPosition: {x: 89.400024, y: -28}
   m_SizeDelta: {x: 146.83899, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &942991494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942991492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f2e15c352693f4ab7796dbe20aa5d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTimeInSeconds: 480
-  countupText: {fileID: 0}
-  panelResults: {fileID: 0}
-  panelTools: {fileID: 0}
-  panelConfirmation: {fileID: 0}
-  panelSOP: {fileID: 0}
-  panelTicketQueue: {fileID: 0}
 --- !u!114 &942991495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2572,7 +2572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668241536}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8f73328f44995d4aa0ffda66f9efdc5, type: 3}
   m_Name: 

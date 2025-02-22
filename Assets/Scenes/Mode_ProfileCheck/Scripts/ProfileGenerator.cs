@@ -1,46 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProfileGenerator : MonoBehaviour
 {
+    public Image bodyRenderer;
+    public Image faceRenderer;
+    public Image hairRenderer;
+    public Image kitRenderer;
+
     public Sprite[] bodySprites;
     public Sprite[] faceSprites;
     public Sprite[] hairSprites;
     public Sprite[] kitSprites;
 
-    public SpriteRenderer bodyRenderer;
-    public SpriteRenderer faceRenderer;
-    public SpriteRenderer hairRenderer;
-    public SpriteRenderer kitRenderer;
-
+    public Color[] background;
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         GenerateRandomProfile();
         
     }
 
-    void GenerateRandomProfile()
+    public void GenerateRandomProfile()
     {
-        if (bodySprites.Length > 0 && faceSprites.Length > 0 && hairSprites.Length > 0 && kitSprites.Length > 0)
-        {
+        
             bodyRenderer.sprite = bodySprites[Random.Range(0, bodySprites.Length)];
             faceRenderer.sprite = faceSprites[Random.Range(0, faceSprites.Length)];
             hairRenderer.sprite = hairSprites[Random.Range(0, hairSprites.Length)];
             kitRenderer.sprite = kitSprites[Random.Range(0, kitSprites.Length)];
 
-            Debug.Log("Profile generated successfully.");
-        }
-        else
-        {
-            Debug.LogError("One or more sprite arrays are empty.");
-        }
+            cam.backgroundColor = background[Random.Range(0, background.Length)];
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
+  

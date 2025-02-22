@@ -8,10 +8,12 @@ public class RandomSample : MonoBehaviour {
 	public Image cface;
 	public Image chair;
 	public Image ckit;
+
 	public Sprite[] body;
 	public Sprite[] face;
 	public Sprite[] hair;
 	public Sprite[] kit;
+
 	public Color[] background;
 	private Camera cam;
 

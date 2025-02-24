@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-    public Camera cam1;
-    public Camera cam2;
+    public Camera cam1;             //main camera
+    public Camera cam2;             // zoom camera
     public Button buttonZoom;
 
     // Start is called before the first frame update
@@ -20,7 +20,21 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        buttonZoom.onClick.AddListener(ZoomClicked); 
+        // if cam2 enabled -> disables buttonZoom to prevent overlapping button with App
+        
+        if (cam2.enabled)           
+        {
+            buttonZoom.enabled = false;
+        }
+
+        // else cam1 is enabled to see office and allows player to press button to zoom in
+
+        else
+        {
+            buttonZoom.onClick.AddListener(ZoomClicked);
+        }
+                     
+        
     }
 
     void ZoomClicked() {

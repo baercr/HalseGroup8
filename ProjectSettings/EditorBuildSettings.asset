@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/InGame.unity
-    guid: 059cf1375a6a98d468efef2bd3c24b32
-  - enabled: 1
     path: Assets/FakeTerminal/Demo/Demo_Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -20,10 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mode_ProfileCheck/ProfileChecking.unity
     guid: d3642ac5cba7e4c1896deb02f8a29f46
-  - enabled: 0
-    path: Assets/Scenes/Login/RegisterMenu.unity
-    guid: e4bf65ef420da394fb7b6150418b9600
-  - enabled: 0
-    path: Assets/Scenes/Login/LoginMenu.unity
-    guid: a880045a853e6644baaab2a1faa57b1b
   m_configObjects: {}

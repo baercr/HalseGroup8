@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour
 
     public void OnButtonMenu()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 
     public void OnButtonMainMenu()

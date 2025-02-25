@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     public void OnButtonStart() 
     {
-        SceneManager.LoadScene(3);      // Loads Shift Selection
+        SceneManager.LoadScene(2);      // Loads Shift Selection
     }
 
     public void OnButtonQuit() 
     { 
-        Application.Quit ();            // Quits Game, will not quit if running from editor
+        Application.Quit();            // Quits Game, will not quit if running from editor
     }
 
-    public void OnButtonMenu()
+    public void OnButtonTerminal()
     {
         SceneManager.LoadScene(1);
     }
@@ -32,6 +32,11 @@ public class Menu : MonoBehaviour
 
     public void OnButtonLogin()
     {
-        SceneManager.LoadScene(2);      // Opens Login Screen
+        //SceneManager.LoadScene();      // Opens Login Screen
+    }
+
+    public void OnTryAgainClicked()
+    {
+        SceneManager.LoadScene(2);
     }
 }

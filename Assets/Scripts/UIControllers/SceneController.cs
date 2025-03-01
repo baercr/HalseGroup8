@@ -17,7 +17,15 @@ public class SceneController : MonoBehaviour
 
     public void OnButtonTerminal()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
+    }
+    public void OnButtonProfiles()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void OnButtonSoftware()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void OnButtonMainMenu()

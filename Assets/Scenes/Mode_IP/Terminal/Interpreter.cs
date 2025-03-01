@@ -38,7 +38,7 @@ public class Interpreter : MonoBehaviour
             LoadTitle("ascii.txt","red", 2);
         }
 
-        if (args[0] == "boop")
+        if (args[0] == "start")
         {
             response.Add("Thank you for using the terminal");
 

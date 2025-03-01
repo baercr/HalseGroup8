@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
+using System.IO;
 using UnityEditor.Compilation;
 using UnityEngine;
 
@@ -31,6 +32,12 @@ public class Interpreter : MonoBehaviour
             ListEntry("stop", "pauses the game");
             ListEntry("run", "resumes the game");
         }
+
+        if (args[0] == "ascii")
+        {
+            LoadTitle("ascii.txt","red", 2);
+        }
+
         if (args[0] == "boop")
         {
             response.Add("Thank you for using the terminal");
@@ -56,5 +63,27 @@ public class Interpreter : MonoBehaviour
     void ListEntry(string a,  string b)
     {
         response.Add(ColorString(a, colors["orange"]) + ": " + ColorString(b, colors["yellow"]));
+    }
+
+    void LoadTitle(string path, string color, int spacing)
+    {
+        StreamReader file = new StreamReader(Path.Combine(Application.streamingAssetsPath, path));
+
+        for (int i = 0; i < spacing; i++)
+        {
+            response.Add("");
+        }
+
+        while(!file.EndOfStream)
+        {
+            response.Add(ColorString(file.ReadLine(), colors[color]));
+        }
+
+        for(int i = 0; i < spacing; i++)
+        {
+            response.Add("");
+        }
+
+        file.Close();
     }
 }

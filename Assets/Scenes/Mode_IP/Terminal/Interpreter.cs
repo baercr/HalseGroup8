@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.IO;
 using UnityEditor.Compilation;
 using UnityEngine;
+using random = UnityEngine.Random;
 
 public class Interpreter : MonoBehaviour
 {
@@ -20,6 +22,13 @@ public class Interpreter : MonoBehaviour
 
     List<string> response = new List<string>();
 
+    public string ipPlayer;
+
+    public void Start()
+    {
+            ipPlayer = CreateIP();
+    }
+
     public List<string> Interpret(string userInput)
     {
         response.Clear();
@@ -29,8 +38,8 @@ public class Interpreter : MonoBehaviour
         if (args[0] == "help")
         {
             ListEntry("help", "returns a list of commands");
-            ListEntry("stop", "pauses the game");
-            ListEntry("run", "resumes the game");
+            ListEntry("ascii", "easter egg");
+            ListEntry("ip -self", "shows your ip address");
         }
 
         if (args[0] == "ascii")
@@ -38,9 +47,10 @@ public class Interpreter : MonoBehaviour
             LoadTitle("ascii.txt","red", 2);
         }
 
-        if (args[0] == "start")
+        if (args[0] == "ip" && args[1] == "-self")
         {
-            response.Add("Thank you for using the terminal");
+            //response.Add("Thank you for using the terminal");
+            response.Add(ipPlayer);
 
             return response;
         }
@@ -85,5 +95,23 @@ public class Interpreter : MonoBehaviour
         }
 
         file.Close();
+    }
+
+    public string CreateIP()
+    {
+        int octect;
+        string ip;
+
+        int[] ipOctect = new int[4];
+
+        for (int i = 0; i < 4; i++)
+        {
+            octect = random.Range(0, 256);
+
+            ipOctect[i] = octect;
+        }
+
+        ip = ipOctect[0] + "." + ipOctect[1] + "." + ipOctect[2] + "." + ipOctect[3];
+        return ip;
     }
 }

@@ -27,7 +27,7 @@ public class NameAndUsernameGenerator : MonoBehaviour
 
     void ReadNamesFromFile()
     {
-        string namesFilePath = Path.Combine(Application.dataPath,"Scenes", "Mode_ProfileCheck",namesFileName);
+        string namesFilePath = Path.Combine(Application.dataPath, "Scenes", "Mode_ProfileCheck", namesFileName);
         string[] lines = File.ReadAllLines(namesFilePath);
         firstNames = new string[3];
         lastNames = new string[3];
@@ -84,6 +84,6 @@ public class NameAndUsernameGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

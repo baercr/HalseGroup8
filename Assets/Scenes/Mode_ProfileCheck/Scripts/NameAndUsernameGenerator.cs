@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class NameAndUsernameGenerator : MonoBehaviour
 {
@@ -13,13 +12,8 @@ public class NameAndUsernameGenerator : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text usernameText;
 
-    public Button tpButton;
-    public Button fpButton;
-
     private string generatedFirstName;
     private string generatedLastName;
-    private string currentUsername;
-    private bool isRealUsername;
 
     void Start()
     {
@@ -29,9 +23,6 @@ public class NameAndUsernameGenerator : MonoBehaviour
 
         string randomUsername = GenerateRandomUsername();
         usernameText.text = "Username: " + randomUsername;
-
-        tpButton.onClick.AddListener(OnTPButtonClick);
-        fpButton.onClick.AddListener(OnFPButtonClick);
     }
 
     void ReadNamesFromFile()
@@ -46,15 +37,6 @@ public class NameAndUsernameGenerator : MonoBehaviour
             firstNames[i] = lines[i];
             lastNames[i] = lines[i + 3];
         }
-    }
-
-    void GenerateRandomProfile()
-    {
-        string randomFullName = GenerateRandomFullName();
-        nameText.text = "Full Name: " + randomFullName;
-
-        string randomUsername = GenerateRandomUsername();
-        usernameText.text = "Username: " + randomUsername;
     }
 
     string GenerateRandomFullName()
@@ -76,54 +58,29 @@ public class NameAndUsernameGenerator : MonoBehaviour
         randomDigits += digits[Random.Range(0, digits.Length)];
         randomDigits += digits[Random.Range(0, digits.Length)];
 
-        string currentusername = firstLetter + lastLetter + randomDigits;
+        string randomUsername = firstLetter + lastLetter + randomDigits;
 
-        bool isRealUsername = Random.Range(0f, 1f) < 0.4f;
-        if (isRealUsername)
+        bool isFaulty = Random.Range(0f, 1f) < 0.4f;
+        if (isFaulty)
         {
             int faultyType = Random.Range(0, 2);
             switch (faultyType)
             {
                 case 0:
-                    currentUsername = firstLetter + firstLetter[Random.Range(0, firstLetter.Length)] + lastLetter + randomDigits;
+                    randomUsername = firstLetter + firstLetter[Random.Range(0, firstLetter.Length)] + lastLetter + randomDigits;
                     break;
                 case 1:
-                    currentUsername = firstLetter + lastLetter + randomDigits + digits[Random.Range(0, digits.Length)];
+                    randomUsername = firstLetter + lastLetter + randomDigits + digits[Random.Range(0, digits.Length)];
                     break;
             }
         }
 
-        return currentUsername;
+        return randomUsername;
 
     }
 
-    public void OnTPButtonClick()
-    {
-        Debug.Log("TP Button Clicked");
-        ValidateUsername(true);
 
-    }
 
-    public void OnFPButtonClick()
-    {
-        Debug.Log("FP Button Clicked");
-        ValidateUsername(false);
-    }
-
-    void ValidateUsername(bool isTP)
-    {
-        if (isTP == isRealUsername)
-        {
-            Debug.Log("The username valudation is accurate");
-        }
-
-        else
-        {
-            Debug.Log("The username validation is inaccurate");
-        }
-
-        GenerateRandomProfile();
-    }
     // Update is called once per frame
     void Update()
     {

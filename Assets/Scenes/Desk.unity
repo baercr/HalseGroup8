@@ -784,8 +784,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 623, y: 142}
-  m_SizeDelta: {x: -1790.5187, y: 120}
+  m_AnchoredPosition: {x: 652.76, y: 149}
+  m_SizeDelta: {x: -2225.684, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177868071
 MonoBehaviour:
@@ -1453,8 +1453,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 436, y: 142}
-  m_SizeDelta: {x: -1801.0336, y: 120}
+  m_AnchoredPosition: {x: 439, y: 149}
+  m_SizeDelta: {x: -2230.7764, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336013821
 MonoBehaviour:
@@ -2062,7 +2062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: -1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 980, y: 420}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564559487
@@ -5475,8 +5475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 797, y: 142}
-  m_SizeDelta: {x: -1802.5358, y: 120}
+  m_AnchoredPosition: {x: 887, y: 149}
+  m_SizeDelta: {x: -2229.5674, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767795187
 MonoBehaviour:
@@ -6863,7 +6863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002779909
@@ -6897,8 +6897,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ProfileValidator : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class ProfileValidator : MonoBehaviour
 
     public Button tpButton;
     public Button fpButton;
+    public TMP_Text feedbackText;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        tpButton.onClick.AddListener(() => CheckProfile(true));
-        fpButton.onClick.AddListener(() => CheckProfile(false));
+        tpButton.onClick.AddListener(() => CheckProfile(false));
+        fpButton.onClick.AddListener(() => CheckProfile(true));
     }
 
     void CheckProfile(bool isTP)
@@ -25,15 +28,18 @@ public class ProfileValidator : MonoBehaviour
 
         if(isTP && isValid)
         {
-            Debug.Log("This profile is TP.");
+            feedbackText.text = "Correct! This profile is FP.";
+            feedbackText.color = Color.green;
         }
         else if(!isTP && !isValid)
         {
-            Debug.Log("This profile is FP.");
+            feedbackText.text = "Correct! This profile is TP.";
+            feedbackText.color = Color.green;
         }
         else
         {
-            Debug.Log("Incorrect. Try again.");
+            feedbackText.text = "Incorrect. Try again.";
+            feedbackText.color = Color.red;
         }
     }
 

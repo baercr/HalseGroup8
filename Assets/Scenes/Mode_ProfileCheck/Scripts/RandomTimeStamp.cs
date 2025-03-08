@@ -14,11 +14,12 @@ public class RandomTimeStamp : MonoBehaviour
         GenerateRandomTimeStamp();
     }
 
-    void GenerateRandomTimeStamp()
+    public string GenerateRandomTimeStamp()
     {
         int randomHour = Random.Range(1, 25);
         string militaryTime = randomHour.ToString("D2") + ":00";
         timeText.text = "Time Stamp: " + militaryTime;
+        return militaryTime;
     }
     // Update is called once per frame
     void Update()

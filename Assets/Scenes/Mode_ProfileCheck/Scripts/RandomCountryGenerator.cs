@@ -18,7 +18,7 @@ public class RandomCountryGenerator : MonoBehaviour
         GenerateRandomCountry();
     }
 
-    void GenerateRandomCountry()
+    public void GenerateRandomCountry()
     {
         int randomIndex = Random.Range(0, countries.Count);
         string randomCountry = countries[randomIndex];

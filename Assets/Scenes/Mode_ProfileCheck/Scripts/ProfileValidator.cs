@@ -14,6 +14,10 @@ public class ProfileValidator : MonoBehaviour
     public Button fpButton;
     public TMP_Text feedbackText;
 
+    public ProfileGenerator profileGenerator;
+    public NameAndUsernameGenerator nameAndUsernameGenerator;
+    public RandomCountryGenerator randomCountryGenerator;
+    public RandomTimeStamp randomTimeStamp;
 
     // Start is called before the first frame update
     void Start()

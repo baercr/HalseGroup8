@@ -5421,18 +5421,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!!WARNING!! Watch for malicious profiles that do NOT meet the following
-    criteria
+  m_text: '!!WARNING!! All profiles must meet all of the following criteria:
 
 
-    - Username: 2+2 (2 letters, 2 #s)
+    -
+    Username: 2+2 (2 letters, 2 #s)
 
 
-    - Location: United States
-    ONLY
+    - Location: United States ONLY
 
 
-    - Work Hours: 8:00-17:00'
+    -
+    Work Hours: 8:00-17:00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6998,6 +6998,10 @@ MonoBehaviour:
   tpButton: {fileID: 735665145}
   fpButton: {fileID: 677681169}
   feedbackText: {fileID: 1551128206}
+  profileGenerator: {fileID: 0}
+  nameAndUsernameGenerator: {fileID: 0}
+  randomCountryGenerator: {fileID: 0}
+  randomTimeStamp: {fileID: 0}
 --- !u!1 &2113126301
 GameObject:
   m_ObjectHideFlags: 0

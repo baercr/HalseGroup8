@@ -18,11 +18,12 @@ public class RandomCountryGenerator : MonoBehaviour
         GenerateRandomCountry();
     }
 
-    public void GenerateRandomCountry()
+    public string GenerateRandomCountry()
     {
         int randomIndex = Random.Range(0, countries.Count);
         string randomCountry = countries[randomIndex];
         countryText.text = "Location: " + randomCountry;
+        return randomCountry;
     }
     // Update is called once per frame
     void Update()

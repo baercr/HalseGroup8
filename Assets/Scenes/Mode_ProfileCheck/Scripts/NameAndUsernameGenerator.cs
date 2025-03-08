@@ -39,7 +39,7 @@ public class NameAndUsernameGenerator : MonoBehaviour
         }
     }
 
-    string GenerateRandomFullName()
+    public string GenerateRandomFullName()
     {
         int firstNameIndex = Random.Range(0, firstNames.Length);
         int lastNameIndex = Random.Range(0, lastNames.Length);
@@ -48,7 +48,7 @@ public class NameAndUsernameGenerator : MonoBehaviour
         return generatedFirstName + " " + generatedLastName;
     }
 
-    string GenerateRandomUsername()
+    public string GenerateRandomUsername()
     {
         string digits = "0123456789";
         string firstLetter = generatedFirstName.Substring(0, 1).ToUpper();

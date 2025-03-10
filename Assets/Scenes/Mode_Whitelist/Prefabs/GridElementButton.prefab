@@ -147,6 +147,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  buttonImage: {fileID: 819607905342645723}
+  whitelistTrueImages:
+  - {fileID: 21300000, guid: 2d657ed01a66f564fa438c4b26100ddc, type: 3}
+  whitelistFalseImages:
+  - {fileID: 21300000, guid: 4cd7d38c88dca2543aec03596c9a32bb, type: 3}
+  - {fileID: 21300000, guid: 2ea6228448b37f94eb893991b37e47f6, type: 3}
 --- !u!1 &8347932680561213718
 GameObject:
   m_ObjectHideFlags: 0

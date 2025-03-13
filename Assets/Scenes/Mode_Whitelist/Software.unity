@@ -3523,7 +3523,7 @@ PrefabInstance:
       objectReference: {fileID: 8077429069989548741, guid: 6f7ff3b64efd35d479b1a3cc8ea46494, type: 3}
     - target: {fileID: 8156884184950660501, guid: 9e8cb19af31943d41bcdae2d7f8fd326, type: 3}
       propertyPath: numOfElements
-      value: 3
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8473289283459766077, guid: 9e8cb19af31943d41bcdae2d7f8fd326, type: 3}
       propertyPath: m_text

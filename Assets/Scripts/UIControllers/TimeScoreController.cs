@@ -12,7 +12,6 @@ public class CountdownClock : MonoBehaviour
     public TextMeshProUGUI countupText; // Reference to the UI Text component
 
     public GameObject panelResults;
-    public GameObject panelTools;
     public GameObject panelConfirmation;
     public GameObject panelSOP;
     public GameObject panelTicketQueue;
@@ -21,7 +20,6 @@ public class CountdownClock : MonoBehaviour
     void Start()
     {
         panelResults.SetActive(false);
-        panelTools.SetActive(false);
         panelConfirmation.SetActive(false);
         panelSOP.SetActive(false);
         panelTicketQueue.SetActive(false);
@@ -42,7 +40,6 @@ public class CountdownClock : MonoBehaviour
         else
         {
             panelResults.SetActive(true);
-            panelTools.SetActive(false);
             panelConfirmation.SetActive(false);
             panelSOP.SetActive(false);
             panelTicketQueue.SetActive(false);

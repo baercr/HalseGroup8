@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Mode_IP/Terminal/Terminal.unity
     guid: 4c4b8329ef4704a49bc89cd7edf700bf
   - enabled: 1
-    path: Assets/Scenes/Mode_ProfileCheck/ProfileChecking.unity
-    guid: d3642ac5cba7e4c1896deb02f8a29f46
+    path: Assets/Scenes/Mode_ProfileCheck/ProfileCheck.unity
+    guid: 72043f920ceac40628a90e45577ea221
   - enabled: 1
     path: Assets/Scenes/Mode_Whitelist/Software.unity
     guid: 318bc419b62f9ab41921e3166fc7b898

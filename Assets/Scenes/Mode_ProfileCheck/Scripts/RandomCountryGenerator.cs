@@ -8,7 +8,7 @@ public class RandomCountryGenerator : MonoBehaviour
     public TMP_Text countryText;
     private List<string> countries = new List<string>
     {
-        "United States", "Russia", "China", "Scamdinavia", "Iraq"
+        "United States", "Russia", "China", "Scamdinavia"
     };
 
 

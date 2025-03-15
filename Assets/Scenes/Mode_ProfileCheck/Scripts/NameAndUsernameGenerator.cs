@@ -29,13 +29,13 @@ public class NameAndUsernameGenerator : MonoBehaviour
     {
         string namesFilePath = Path.Combine(Application.dataPath, "Scenes", "Mode_ProfileCheck", namesFileName);
         string[] lines = File.ReadAllLines(namesFilePath);
-        firstNames = new string[3];
-        lastNames = new string[3];
+        firstNames = new string[5];
+        lastNames = new string[5];
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
             firstNames[i] = lines[i];
-            lastNames[i] = lines[i + 3];
+            lastNames[i] = lines[i + 5];
         }
     }
 

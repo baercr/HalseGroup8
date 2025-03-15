@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,31 +15,44 @@ public class ProfileValidator : MonoBehaviour
     public Button fpButton;
     public TMP_Text feedbackText;
 
-    public ProfileGenerator profileGenerator;
+    public Image cbody;
+    public Image cface;
+    public Image chair;
+    public Image ckit;
+
+    public TMP_Text fullNameText;
+    public TMP_Text usernameText;
+    public TMP_Text locationText;
+    public TMP_Text workHoursText;
+
     public NameAndUsernameGenerator nameAndUsernameGenerator;
     public RandomCountryGenerator randomCountryGenerator;
     public RandomTimeStamp randomTimeStamp;
+    public RandomSample randomSample;
 
     // Start is called before the first frame update
     void Start()
     {
         tpButton.onClick.AddListener(() => CheckProfile(false));
         fpButton.onClick.AddListener(() => CheckProfile(true));
+        GenerateNewProfile();
     }
 
     void CheckProfile(bool isTP)
     {
         bool isValid = ValidateProfile();
 
-        if(isTP && isValid)
+        if (isTP && isValid)
         {
             feedbackText.text = "Correct! This profile is FP.";
             feedbackText.color = Color.green;
+            StartCoroutine(ShowFeedbackAndGenerateNewProfile());
         }
-        else if(!isTP && !isValid)
+        else if (!isTP && !isValid)
         {
             feedbackText.text = "Correct! This profile is TP.";
             feedbackText.color = Color.green;
+            StartCoroutine(ShowFeedbackAndGenerateNewProfile());
         }
         else
         {
@@ -49,7 +63,7 @@ public class ProfileValidator : MonoBehaviour
 
     bool ValidateProfile()
     {
-        return IsUsernameValid() && IsCountryVaild() && IsWorkHoursValid();
+        return IsUsernameValid() && IsCountryValid() && IsWorkHoursValid();
     }
 
     bool IsUsernameValid()
@@ -66,27 +80,52 @@ public class ProfileValidator : MonoBehaviour
         return letterCount == 2 && numberCount == 2;
     }
 
-    bool IsCountryVaild()
+    bool IsCountryValid()
     {
         return country == "United States";
     }
 
     bool IsWorkHoursValid()
     {
-        string[] hours = workHours.Split('-');
-        if (hours.Length != 2) return false;
-
-        if (int.TryParse(hours[0], out int startHour) && int.TryParse(hours[1], out int endHour))
+        if(DateTime.TryParseExact(workHours, "HH:mm", null, System.Globalization.DateTimeStyles.None, out DateTime time))
         {
-            return startHour >= 8 && endHour <= 17;
+            int hour = time.Hour;
+            return hour >= 8 && hour <= 17;
         }
+        return false;
+    }
 
-        return false; 
+    IEnumerator ShowFeedbackAndGenerateNewProfile()
+    {
+        yield return new WaitForSeconds(1);
+        feedbackText.text = "";
+        GenerateNewProfile();
+        
+    }
+
+    void GenerateNewProfile()
+    {
+        string randomFullName = nameAndUsernameGenerator.GenerateRandomFullName();
+        username = nameAndUsernameGenerator.GenerateRandomUsername();
+        country = randomCountryGenerator.GenerateRandomCountry();
+        workHours = randomTimeStamp.GenerateRandomTimeStamp();
+
+        fullNameText.text = "Full Name: " + randomFullName;
+        usernameText.text = "Username: " + username;
+        locationText.text = "Country: " + country;
+        workHoursText.text = "Time Stamp: " + workHours;
+
+        randomSample.RandomizeCharacter();
+
+        cbody.sprite = randomSample.cbody.sprite;
+        chair.sprite = randomSample.chair.sprite;
+        cface.sprite = randomSample.cface.sprite;
+        ckit.sprite = randomSample.ckit.sprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

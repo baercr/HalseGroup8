@@ -32,7 +32,7 @@ public class TerminalManager : MonoBehaviour
             // Clear input field
             ClearInputField();
 
-            // Instatitate a gameobject with a directory prefix
+            // Instantitate a gameobject with a directory prefix
             AddDirectoryLine(userInput);
 
             // Add the interpreter lines

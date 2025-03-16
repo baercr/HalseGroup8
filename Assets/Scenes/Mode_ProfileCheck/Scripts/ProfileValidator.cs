@@ -97,7 +97,7 @@ public class ProfileValidator : MonoBehaviour
 
     IEnumerator ShowFeedbackAndGenerateNewProfile()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
         feedbackText.text = "";
         GenerateNewProfile();
         

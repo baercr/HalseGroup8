@@ -38,22 +38,29 @@ public class Interpreter : MonoBehaviour
         if (args[0] == "help")
         {
             ListEntry("help", "returns a list of commands");
-            ListEntry("ascii", "easter egg");
-            ListEntry("ip -self", "shows your ip address");
+            ListEntry("ipconfig", "ip management");
+            ListEntry("sudo 'command'", "grants admin privledges");
+        }
+
+        if (args[0] == "ipconfig")
+        {
+            response.Add("ipconfig requires admin privledges");
+
+            return response;
+        }
+
+        if (args[0] == "sudo" && args[1] == "ipconfig")
+        {
+            LoadTitle("ipconfig.txt", "red", 1);
+            return response;
         }
 
         if (args[0] == "ascii")
         {
-            LoadTitle("ascii.txt","red", 2);
-        }
-
-        if (args[0] == "ip" && args[1] == "-self")
-        {
-            //response.Add("Thank you for using the terminal");
-            response.Add(ipPlayer);
-
+            LoadTitle("ascii.txt", "red", 2);
             return response;
         }
+
         else
         {
             response.Add("Command not recognized. Type help for a list of commands");

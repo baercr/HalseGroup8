@@ -2157,7 +2157,6 @@ MonoBehaviour:
   startTimeInSeconds: 480
   countupText: {fileID: 480546918}
   panelResults: {fileID: 1163966277}
-  panelTools: {fileID: 1402788483}
   panelConfirmation: {fileID: 1440822051}
   panelSOP: {fileID: 758384369}
   panelTicketQueue: {fileID: 1907968315}
@@ -3492,7 +3491,7 @@ Transform:
   m_GameObject: {fileID: 1009896044}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.395348, y: -53.63792, z: 161.9577}
+  m_LocalPosition: {x: -54.395348, y: -53.63792, z: 150.5}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []

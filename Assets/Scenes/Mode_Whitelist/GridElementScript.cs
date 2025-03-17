@@ -47,6 +47,7 @@ public class GridElementScript : MonoBehaviour
         // Detect right-click to display the popup menu
         if (Input.GetMouseButtonDown(1)) // Right mouse button
         {
+           // Debug.Log("Right-click detected!");
             if (selectedElement == this)
             {
                 ShowPopupMenu(Input.mousePosition);
@@ -73,28 +74,18 @@ public class GridElementScript : MonoBehaviour
     // Function to show the popup menu
     private void ShowPopupMenu(Vector3 position)
     {
-        if (popupMenu != null)
-        {
-            // Activate the popup menu and position it at the mouse click location
-            popupMenu.SetActive(true);
-            RectTransform rectTransform = popupMenu.GetComponent<RectTransform>();
-            Vector2 anchoredPosition;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                popupMenu.transform.parent.GetComponent<RectTransform>(),
-                position,
-                null,
-                out anchoredPosition
-            );
-            rectTransform.anchoredPosition = anchoredPosition;
-
-            Debug.Log("Popup menu displayed.");
-        }
-        else
-        {
-            Debug.LogError("Popup menu reference is missing!");
-        }
+            if (popupMenu != null)
+            {
+                Debug.Log("Activating popup menu.");
+                popupMenu.SetActive(true); // Activates the popup menu
+                popupMenu.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, Camera.main.nearClipPlane)); // Sets its position
+                Debug.Log("Popup menu is now active at position: " + position);
+            }
+            else
+            {
+                Debug.LogError("Popup menu reference is null!");
+            }
     }
-
     // Function to hide the popup menu
     public void HidePopupMenu()
     {

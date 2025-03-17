@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5f1eab0b9b0104d9d960dabbaa26cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ipPlayer: 
 --- !u!1 &1541455705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1495,10 @@ PrefabInstance:
     - target: {fileID: 6930518642444082187, guid: 6e763b9f06aa49d4783c1ea107cc93e9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077226754333112403, guid: 6e763b9f06aa49d4783c1ea107cc93e9, type: 3}
+      propertyPath: m_text
+      value: Initalizing...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

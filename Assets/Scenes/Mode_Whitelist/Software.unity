@@ -3457,14 +3457,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. Follow SOP.
-
-
-    2. Expect email from Brand Ambassador.
-
-
-    3. All
-    data to Scandanavia is connected to MBG11.'
+  m_text: "1. WARNING!!. Malicious software has been reported on multiple machines
+    within the organization.\n\n2. Company approved applications are as followed:
+    \no\tBattery Management Tool\r\no\tMedia Playback Application\r\no\tFile Explorer\r\no\tNetwork
+    Configuration Manager\r\no\tSystem Settings Manager\r\no\tRecycling Bin\r\no\tDocument
+    Editor\r\n\n3. All other applications are to be considerred malicious and should
+    promptly be removed.\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3491,8 +3489,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

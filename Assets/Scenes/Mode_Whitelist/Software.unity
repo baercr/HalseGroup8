@@ -3459,10 +3459,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "1. WARNING!!. Malicious software has been reported on multiple machines
     within the organization.\n\n2. Company approved applications are as followed:
-    \no\tBattery Management Tool\r\no\tMedia Playback Application\r\no\tFile Explorer\r\no\tNetwork
-    Configuration Manager\r\no\tSystem Settings Manager\r\no\tRecycling Bin\r\no\tDocument
-    Editor\r\n\n3. All other applications are to be considerred malicious and should
-    promptly be removed.\n\r\n"
+    \n\toBattery Management\n\toMedia Playback\n\toFile Explorer\r\n\toNetwork Configuration\r\n\toSystem
+    Settings \n\toRecycling Bin\r\n\toDocument Editor\r\n\n3. All other applications
+    are to be considerred malicious and should promptly be removed.\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3882,6 +3881,14 @@ PrefabInstance:
     - target: {fileID: 1745556818953163656, guid: ff7fa394452bf4347b0f8e6b4d4d9673, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082557703052799687, guid: ff7fa394452bf4347b0f8e6b4d4d9673, type: 3}
+      propertyPath: m_Spacing.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082557703052799687, guid: ff7fa394452bf4347b0f8e6b4d4d9673, type: 3}
+      propertyPath: m_Spacing.y
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2819558015768969429, guid: ff7fa394452bf4347b0f8e6b4d4d9673, type: 3}
       propertyPath: m_AnchoredPosition.x

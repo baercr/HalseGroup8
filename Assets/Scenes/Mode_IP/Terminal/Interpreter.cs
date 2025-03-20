@@ -40,18 +40,47 @@ public class Interpreter : MonoBehaviour
             ListEntry("help", "returns a list of commands");
             ListEntry("ipconfig", "ip management");
             ListEntry("sudo 'command'", "grants admin privledges");
+            ListEntry("arp -a", "scans network for IP addresses");
         }
 
         if (args[0] == "ipconfig")
         {
-            response.Add("ipconfig requires admin privledges");
+            response.Add("'ipconfig' command requires admin privledges");
 
             return response;
         }
 
         if (args[0] == "sudo" && args[1] == "ipconfig")
         {
-            LoadTitle("ipconfig.txt", "red", 1);
+            response.Add("\r\n\r\n\r\n\r\n\r\n" +
+                "Wireless LAN adapter Local Area Connection* 10:\r\n\r\n   " +
+                "IPv4 Address. . . . . . . . . . . : " + CreateIP() + " \r\n   " +
+                "Subnet Mask . . . . . . . . . . . : 255.255.255.0 \r\n   " +
+                "Default Gateway . . . . . . . . . : 192.168.86.1");
+            response.Add("");
+            response.Add("");
+            response.Add("");
+            response.Add("");
+            response.Add("");
+            return response;
+        }
+
+        if (args[0] == "arp" && args[1] == "-a")
+        {
+            response.Add("'arp -a' command requires admin privledges");
+
+            return response;
+        }
+
+        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a")
+        {
+            response.Add(" \r\n\r\n" +
+                "Internet Address      Physical Address      Type\r\n  " +
+                "192.168.86.1          9c-4f-5f-1f-d3-a7     dynamic");
+
+            response.Add("");
+            response.Add("");
+
             return response;
         }
 

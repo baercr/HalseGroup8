@@ -1,17 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GridElementScript : MonoBehaviour
+public class GridElementScript : MonoBehaviour, IPointerClickHandler
 {
     public bool isActive;
     public UnityEngine.UI.Image buttonImage; // Reference to the button's image component
     public List<Sprite> whitelistTrueImages; // List of images from WhitelistTrue
     public List<Sprite> whitelistFalseImages; // List of images from WhitelistFalse
-
     private static List<Sprite> usedTrueImages = new List<Sprite>(); // Track used images from WhitelistTrue
     private static List<Sprite> usedFalseImages = new List<Sprite>(); // Track used images from WhitelistFalse
-
-    public PopupMenuController popupMenuController; // Reference to the popup menu controller
     private static GridElementScript selectedElement; // To track the currently selected element
 
     void Start()
@@ -54,17 +52,6 @@ public class GridElementScript : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1)) // Right mouse button
-        {
-            if (selectedElement == this && popupMenuController != null)
-            {
-                popupMenuController.ShowPopupMenu(Input.mousePosition);
-            }
-        }
-    }
-
     public void OnElementClick()
     {
         if (selectedElement != null)
@@ -74,5 +61,10 @@ public class GridElementScript : MonoBehaviour
 
         selectedElement = this;
         Debug.Log("This element is now selected.");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Pointer click detected");
     }
 }

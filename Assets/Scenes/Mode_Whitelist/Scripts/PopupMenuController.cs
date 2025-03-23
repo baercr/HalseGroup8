@@ -1,55 +1,71 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PopupMenu : MonoBehaviour
+public class PopupMenuController : MonoBehaviour
 {
-    private GameObject selectedGridElement;
+    // Reference to the popup menu UI object
+    public GameObject popupMenu;
 
-    void Update()
+    // Transform of the grid parent containing grid elements
+    public Transform gridParent;
+
+    // Function to display the popup menu
+    public void ShowPopup(Vector3 position)
     {
-        if (Input.GetMouseButtonDown(1)) // Right mouse button
+        if (popupMenu != null)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            popupMenu.SetActive(true);
+            popupMenu.transform.position = position;
+        }
+        else
+        {
+            Debug.LogWarning("Popup menu is not assigned.");
+        }
+    }
 
-            if (hit.collider != null)
+    // Function to close the popup menu
+    public void ClosePopup()
+    {
+        if (popupMenu != null)
+        {
+            popupMenu.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Popup menu reference is null.");
+        }
+    }
+
+    // Function to remove the selected grid element
+    public void RemoveSelectedElement()
+    {
+        if (GridElementScript.selectedElement != null)
+        {
+            // Determine if the selected element is active or inactive
+            bool isActive = GridElementScript.selectedElement.isActive;
+
+            // Destroy the selected grid element
+            Destroy(GridElementScript.selectedElement.gameObject);
+
+            // Display a message based on the state of the removed element
+            if (isActive)
             {
-                // Check if the clicked object is a grid element
-                if (hit.collider.gameObject.CompareTag("GridElement"))
-                {
-                    selectedGridElement = hit.collider.gameObject;
-                    ShowPopupMenu(mousePosition);
-                }
+                Debug.Log("You have successfully removed the non-approved software!");
             }
+            else
+            {
+                Debug.Log("Unfortunately, you have removed a corporate-approved application.");
+            }
+
+            // Clear the selected element
+            GridElementScript.selectedElement = null;
+
+            // Close the popup menu
+            ClosePopup();
         }
-    }
-
-    private void ShowPopupMenu(Vector3 position)
-    {
-        GameObject popupMenu = GameObject.Find("PopupMenu");
-        popupMenu.SetActive(true);
-        popupMenu.transform.position = Camera.main.WorldToScreenPoint(position);
-    }
-
-    public void RemoveGridElement()
-    {
-        if (selectedGridElement != null)
+        else
         {
-            Destroy(selectedGridElement);
-            ClosePopupMenu();
+            Debug.LogWarning("No element is selected to remove.");
         }
-    }
-
-    public void IgnoreAction()
-    {
-        // Perform any logic for the ignore action
-        Debug.Log("Ignore button clicked");
-        ClosePopupMenu();
-    }
-
-    private void ClosePopupMenu()
-    {
-        GameObject popupMenu = GameObject.Find("PopupMenu");
-        popupMenu.SetActive(false);
-        selectedGridElement = null;
     }
 }

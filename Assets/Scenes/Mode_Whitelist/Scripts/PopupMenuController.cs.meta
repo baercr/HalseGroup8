@@ -4,9 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - popupMenu: {fileID: 8276789430587400299, guid: 83441c25f0300824e83d57032c556223, type: 3}
-  - removeButton: {instanceID: 0}
-  - ignoreButton: {instanceID: 0}
+  - popupMenu: {fileID: 1876339291415595686, guid: e0e4469a9cadf34439ecb67dfeaf25be, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

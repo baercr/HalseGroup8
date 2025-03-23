@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GridElementScript : MonoBehaviour, IPointerClickHandler
+public class GridElementScript : MonoBehaviour
 {
     public bool isActive;
     public UnityEngine.UI.Image buttonImage; // Reference to the button's image component
@@ -10,7 +10,7 @@ public class GridElementScript : MonoBehaviour, IPointerClickHandler
     public List<Sprite> whitelistFalseImages; // List of images from WhitelistFalse
     private static List<Sprite> usedTrueImages = new List<Sprite>(); // Track used images from WhitelistTrue
     private static List<Sprite> usedFalseImages = new List<Sprite>(); // Track used images from WhitelistFalse
-    private static GridElementScript selectedElement; // To track the currently selected element
+    public static GridElementScript selectedElement; // To track the currently selected element
 
     void Start()
     {
@@ -62,9 +62,5 @@ public class GridElementScript : MonoBehaviour, IPointerClickHandler
         selectedElement = this;
         Debug.Log("This element is now selected.");
     }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("Pointer click detected");
-    }
 }
+

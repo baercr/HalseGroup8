@@ -74,13 +74,16 @@ public class PopupMenuController : MonoBehaviour
             {
                 popupText.text = "successfully removed the non-approved software!";
                 popupText.color = Color.green;
+                StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("You have successfully removed the non-approved software!");
             }
             else
             {
                 popupText.text = "you have removed a corporate-approved application!";
                 popupText.color = Color.red;
+                StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("Unfortunately, you have removed a corporate-approved application.");
+                
             }
 
             // Clear the selected element
@@ -93,6 +96,13 @@ public class PopupMenuController : MonoBehaviour
         {
             Debug.LogWarning("No element is selected to remove.");
         }
+    }
+    IEnumerator ShowWhitelistFeedback()
+    {
+        yield return new WaitForSeconds(1);
+        popupText.text = "";
+        
+        
     }
 
 }

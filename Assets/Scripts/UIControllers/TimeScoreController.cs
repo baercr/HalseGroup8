@@ -14,7 +14,6 @@ public class CountdownClock : MonoBehaviour
     public GameObject panelResults;
     public GameObject panelConfirmation;
     public GameObject panelSOP;
-    public GameObject panelTicketQueue;
 
 
     void Start()
@@ -22,7 +21,6 @@ public class CountdownClock : MonoBehaviour
         panelResults.SetActive(false);
         panelConfirmation.SetActive(false);
         panelSOP.SetActive(false);
-        panelTicketQueue.SetActive(false);
         
         currentTime = startTimeInSeconds;
         UpdateCountupText();
@@ -42,7 +40,6 @@ public class CountdownClock : MonoBehaviour
             panelResults.SetActive(true);
             panelConfirmation.SetActive(false);
             panelSOP.SetActive(false);
-            panelTicketQueue.SetActive(false);
         }
     }
 

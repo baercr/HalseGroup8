@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour
 {
     public void OnButtonStart() 
     {
-        SceneManager.LoadScene(2);      // Loads Shift Selection
+        SceneManager.LoadScene(1);      // Loads Shift Selection
     }
 
     public void OnButtonQuit() 

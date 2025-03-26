@@ -13,37 +13,10 @@ public class PopupMenuController : MonoBehaviour
     // Transform of the grid parent containing grid elements
     public Transform gridParent;
 
-    private void Update()
-    {
-        // Check for a right-click event
-        if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
-        {
-            // Display the popup menu at the pointer's position
-            ShowPopup(Input.mousePosition);
-        }
-    }
+    
 
     // Function to display the popup menu
-    public void ShowPopup(Vector3 screenPosition)
-    {
-        if (popupMenu != null)
-        {
-            popupMenu.SetActive(true);
-
-            // Convert screen position to world position in the canvas
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                popupMenu.GetComponentInParent<Canvas>().transform as RectTransform,
-                screenPosition,
-                Camera.main,
-                out Vector3 worldPosition);
-
-            popupMenu.transform.position = worldPosition;
-        }
-        else
-        {
-            Debug.LogWarning("Popup menu is not assigned.");
-        }
-    }
+   
 
     // Function to close the popup menu
     public void ClosePopup()

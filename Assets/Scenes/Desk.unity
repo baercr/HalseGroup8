@@ -784,8 +784,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 652.76, y: 149}
-  m_SizeDelta: {x: -2225.684, y: 120}
+  m_AnchoredPosition: {x: 636, y: 149}
+  m_SizeDelta: {x: -1762.2772, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177868071
 MonoBehaviour:
@@ -1453,8 +1453,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 439, y: 149}
-  m_SizeDelta: {x: -2230.7764, y: 120}
+  m_AnchoredPosition: {x: 396.58002, y: 149}
+  m_SizeDelta: {x: -1771.1576, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336013821
 MonoBehaviour:
@@ -2159,7 +2159,6 @@ MonoBehaviour:
   panelResults: {fileID: 1163966277}
   panelConfirmation: {fileID: 1440822051}
   panelSOP: {fileID: 758384369}
-  panelTicketQueue: {fileID: 1907968315}
 --- !u!114 &584848732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,14 +2171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da88419ea1c8c0c40b277b07ce7e3e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelTicketQueue: {fileID: 1907968315}
-  buttonTicketQueue: {fileID: 1012229642}
   panelSOP: {fileID: 758384369}
   buttonSOP: {fileID: 837777620}
   panelConfirmation: {fileID: 1440822051}
   buttonConfirmation: {fileID: 1461419253}
-  panelTools: {fileID: 1402788483}
-  buttonTools: {fileID: 1260288110}
 --- !u!114 &584848733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,8 +5725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 887, y: 149}
-  m_SizeDelta: {x: -2229.5674, y: 120}
+  m_AnchoredPosition: {x: 868.5596, y: 149}
+  m_SizeDelta: {x: -1737.119, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767795187
 MonoBehaviour:

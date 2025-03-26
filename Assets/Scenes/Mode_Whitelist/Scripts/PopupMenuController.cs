@@ -1,21 +1,43 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class PopupMenuController : MonoBehaviour
 {
     // Reference to the popup menu UI object
     public GameObject popupMenu;
 
+    public TextMeshProUGUI popupText;
+
     // Transform of the grid parent containing grid elements
     public Transform gridParent;
 
+    private void Update()
+    {
+        // Check for a right-click event
+        if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
+        {
+            // Display the popup menu at the pointer's position
+            ShowPopup(Input.mousePosition);
+        }
+    }
+
     // Function to display the popup menu
-    public void ShowPopup(Vector3 position)
+    public void ShowPopup(Vector3 screenPosition)
     {
         if (popupMenu != null)
         {
             popupMenu.SetActive(true);
-            popupMenu.transform.position = position;
+
+            // Convert screen position to world position in the canvas
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+                popupMenu.GetComponentInParent<Canvas>().transform as RectTransform,
+                screenPosition,
+                Camera.main,
+                out Vector3 worldPosition);
+
+            popupMenu.transform.position = worldPosition;
         }
         else
         {
@@ -50,11 +72,18 @@ public class PopupMenuController : MonoBehaviour
             // Display a message based on the state of the removed element
             if (isActive)
             {
+                popupText.text = "successfully removed the non-approved software!";
+                popupText.color = Color.green;
+                StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("You have successfully removed the non-approved software!");
             }
             else
             {
+                popupText.text = "you have removed a corporate-approved application!";
+                popupText.color = Color.red;
+                StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("Unfortunately, you have removed a corporate-approved application.");
+                
             }
 
             // Clear the selected element
@@ -68,4 +97,12 @@ public class PopupMenuController : MonoBehaviour
             Debug.LogWarning("No element is selected to remove.");
         }
     }
+    IEnumerator ShowWhitelistFeedback()
+    {
+        yield return new WaitForSeconds(1);
+        popupText.text = "";
+        
+        
+    }
+
 }

@@ -54,7 +54,7 @@ public class Interpreter : MonoBehaviour
         {
             response.Add("\r\n\r\n\r\n\r\n\r\n" +
                 "Wireless LAN adapter Local Area Connection* 10:\r\n\r\n   " +
-                "IPv4 Address. . . . . . . . . . . : " + CreateIP() + " \r\n   " +
+                "IPv4 Address. . . . . . . . . . . : " + ipPlayer + " \r\n   " +
                 "Subnet Mask . . . . . . . . . . . : 255.255.255.0 \r\n   " +
                 "Default Gateway . . . . . . . . . : 192.168.86.1");
             response.Add("");
@@ -76,7 +76,8 @@ public class Interpreter : MonoBehaviour
         {
             response.Add(" \r\n\r\n" +
                 "Internet Address      Physical Address      Type\r\n  " +
-                "192.168.86.1          9c-4f-5f-1f-d3-a7     dynamic");
+                "192.168.86.1          c-4f-5f-1f-d3     dynamic \r\n  " +
+                ipPlayer + "         b-4f-6s-1f-d2     dynamic");
 
             response.Add("");
             response.Add("");

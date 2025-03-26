@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1800, y: 50}
+  m_SizeDelta: {x: 1791.6348, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1967802864070295559
 CanvasRenderer:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 15
+    m_Left: 10
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -273,7 +273,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 317.113, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4124778322966645886
 CanvasRenderer:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:\SYSTEM32>
+  m_text: 'player@FWFrenzy ~ $ '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 012199ea3bf5df1438bf986f4e7e7f86, type: 2}
   m_sharedMaterial: {fileID: 2349584217148573917, guid: 012199ea3bf5df1438bf986f4e7e7f86, type: 2}

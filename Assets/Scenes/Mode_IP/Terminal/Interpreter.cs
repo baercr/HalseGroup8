@@ -75,9 +75,9 @@ public class Interpreter : MonoBehaviour
         if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a")
         {
             response.Add(" \r\n\r\n" +
-                "Internet Address      Physical Address      Type\r\n  " +
-                "192.168.86.1          c-4f-5f-1f-d3     dynamic \r\n  " +
-                ipPlayer + "         b-4f-6s-1f-d2     dynamic");
+                "Internet Address           Type\r\n  " +
+                "192.168.86.1             dynamic \r\n  " +
+                ipPlayer + "           dynamic");
 
             response.Add("");
             response.Add("");

@@ -23,10 +23,12 @@ public class Interpreter : MonoBehaviour
     List<string> response = new List<string>();
 
     public string ipPlayer;
+    public string ipToDelete;
 
     public void Start()
     {
-            ipPlayer = CreateIP();
+        ipPlayer = CreateIP();
+        ipToDelete = CreateIP();
     }
 
     public List<string> Interpret(string userInput)
@@ -35,14 +37,21 @@ public class Interpreter : MonoBehaviour
 
         string[] args = userInput.Split();
 
+
+        //HELP
+        //
         if (args[0] == "help")
         {
             ListEntry("help", "returns a list of commands");
-            ListEntry("ipconfig", "ip management");
             ListEntry("sudo 'command'", "grants admin privledges");
+            ListEntry("ipconfig", "ip management");
             ListEntry("arp -a", "scans network for IP addresses");
+            ListEntry("arp -ipdisconnect", "disconnects unwanted IP devices");
         }
 
+
+        //IPCONFIG NO ADMIN
+        //
         if (args[0] == "ipconfig")
         {
             response.Add("'ipconfig' command requires admin privledges");
@@ -50,6 +59,9 @@ public class Interpreter : MonoBehaviour
             return response;
         }
 
+
+        //IPCONFIG ADMIN
+        //
         if (args[0] == "sudo" && args[1] == "ipconfig")
         {
             response.Add("\r\n\r\n\r\n\r\n\r\n" +
@@ -62,9 +74,13 @@ public class Interpreter : MonoBehaviour
             response.Add("");
             response.Add("");
             response.Add("");
+
             return response;
         }
 
+
+        //ARP NO ADMIN
+        //
         if (args[0] == "arp" && args[1] == "-a")
         {
             response.Add("'arp -a' command requires admin privledges");
@@ -72,19 +88,47 @@ public class Interpreter : MonoBehaviour
             return response;
         }
 
+
+        //ARP ADMIN
+        //
         if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a")
         {
-            response.Add(" \r\n\r\n" +
-                "Internet Address           Type\r\n  " +
-                "192.168.86.1             dynamic \r\n  " +
-                ipPlayer + "           dynamic");
+            response.Add(" \r\n\r\n\r\n" +
+                "Internet Address       Type\r\n  " +
+                "192.168.86.1           dynamic \r\n  " +
+                ipPlayer + "           dynamic \r\n  " +
+                ipToDelete + "          dynamic");
 
+            response.Add("");
             response.Add("");
             response.Add("");
 
             return response;
         }
 
+
+        //ARP IPDISCONNECT NO ADMIN
+        //
+        if (args[0] == "arp" && args[1] == "-ipdisconnect")
+        {
+            response.Add("'arp -ipdisconnect' command requires admin privledges");
+
+            return response;
+        }
+
+
+        //ARP IPDISCONNECT ADMIN
+        //
+        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-ipdisconnect")
+        {
+            response.Add("");
+
+            return response;
+        }
+
+
+        //ASCII
+        //
         if (args[0] == "ascii")
         {
             LoadTitle("ascii.txt", "red", 2);

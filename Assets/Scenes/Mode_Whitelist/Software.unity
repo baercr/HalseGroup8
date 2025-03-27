@@ -1893,7 +1893,6 @@ MonoBehaviour:
   panelResults: {fileID: 1163966277}
   panelConfirmation: {fileID: 1440822051}
   panelSOP: {fileID: 758384369}
-  panelTicketQueue: {fileID: 1907968315}
 --- !u!114 &584848732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,14 +1905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da88419ea1c8c0c40b277b07ce7e3e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelTicketQueue: {fileID: 1907968315}
-  buttonTicketQueue: {fileID: 1012229642}
   panelSOP: {fileID: 758384369}
   buttonSOP: {fileID: 837777620}
   panelConfirmation: {fileID: 1440822051}
   buttonConfirmation: {fileID: 1461419253}
-  panelTools: {fileID: 1402788483}
-  buttonTools: {fileID: 1260288110}
 --- !u!114 &584848733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4731,7 +4726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9fd3e0f9842ae439fcec5efef43110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupmenu: {fileID: 1876339291415595686, guid: e0e4469a9cadf34439ecb67dfeaf25be, type: 3}
+  popupmenu: {fileID: 1937699023}
 --- !u!1001 &1694808802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4766,15 +4761,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5621693730563513602, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 885
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 5621693730563513602, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 685
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7308543083662619702, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7604699181974635131, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6025,6 +6020,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910504468}
   m_CullTransparentMesh: 1
+--- !u!1 &1937699023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7308543083662619702, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+  m_PrefabInstance: {fileID: 1694808802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1985131031
 GameObject:
   m_ObjectHideFlags: 0

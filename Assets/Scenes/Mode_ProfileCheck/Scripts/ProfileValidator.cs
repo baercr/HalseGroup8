@@ -14,6 +14,7 @@ public class ProfileValidator : MonoBehaviour
     public Button tpButton;
     public Button fpButton;
     public TMP_Text feedbackText;
+    public TMP_Text attemptsInfoText;
 
     public Image cbody;
     public Image cface;
@@ -30,6 +31,10 @@ public class ProfileValidator : MonoBehaviour
     public RandomTimeStamp randomTimeStamp;
     public RandomSample randomSample;
 
+    public int maxAttempts = 5;
+    private int incorrectGuesses = 0;
+    private int correctGuesses = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,20 +49,31 @@ public class ProfileValidator : MonoBehaviour
 
         if (isTP && isValid)
         {
+            correctGuesses++;
             feedbackText.text = "Correct! This profile is FP.";
             feedbackText.color = Color.green;
             StartCoroutine(ShowFeedbackAndGenerateNewProfile());
         }
         else if (!isTP && !isValid)
         {
+            correctGuesses++;
             feedbackText.text = "Correct! This profile is TP.";
             feedbackText.color = Color.green;
             StartCoroutine(ShowFeedbackAndGenerateNewProfile());
         }
         else
         {
+            incorrectGuesses++;
             feedbackText.text = "Incorrect. Try again.";
             feedbackText.color = Color.red;
+        }
+
+        if(incorrectGuesses >= maxAttempts)
+        {
+            feedbackText.text = "Game Over. You've run out of attempts.";
+            feedbackText.color = Color.red;
+            tpButton.interactable = false;
+            fpButton.interactable = false;
         }
     }
 
@@ -123,9 +139,19 @@ public class ProfileValidator : MonoBehaviour
         ckit.sprite = randomSample.ckit.sprite;
     }
 
+    public string GetAttemptsInfo()
+    {
+        int remmainingAttempts = maxAttempts - incorrectGuesses;
+        return "Remaing Attempts: " + remmainingAttempts + "\nCorrect Guesses: " + correctGuesses;
+    }
+
+    void UpdateAttemptsInfo()
+    {
+        attemptsInfoText.text = GetAttemptsInfo();
+    }
     // Update is called once per frame
     void Update()
     {
-
+        UpdateAttemptsInfo();
     }
 }

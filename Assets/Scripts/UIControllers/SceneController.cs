@@ -45,6 +45,6 @@ public class SceneController : MonoBehaviour
 
     public void OnTryAgainClicked()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

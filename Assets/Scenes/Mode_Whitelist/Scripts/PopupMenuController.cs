@@ -1,92 +1,79 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class PopupMenuController : MonoBehaviour
 {
-    public GameObject popupMenu;
-    public TextMeshProUGUI popupText;
-    public TextMeshProUGUI IncorrectGuessesLeft;
-    public Transform gridParent;
+    public GameObject popupMenu;            // Popup menu object
+    public TextMeshProUGUI popupText;       // Feedback text
+    public TextMeshProUGUI IncorrectGuessesLeft; // Remaining guess counter
+    public GameObject gridParent;          // Parent object of grid
+    public GridInst gridInitializer;       // Reference to GridInst for grid operations
 
-    private int IncorrectGuesses = 0;
-    private int MaxTries = 5;
-    private int attemptsLeft;
+    private int incorrectGuesses = 0;      // Track incorrect removals
+    private const int MaxTries = 3;        // Maximum incorrect attempts
+
     public void ClosePopup()
     {
-        if (popupMenu != null)
-        {
-            popupMenu.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Popup menu reference is null.");
-        }
+        popupMenu?.SetActive(false);
     }
 
     public void RemoveSelectedElement()
     {
-        if (GridElementScript.selectedElement != null)
+        if (GridElementScript.selectedElement == null)
         {
-            bool isActive = GridElementScript.selectedElement.isActive;
+            DisplayMessage("No App was selected to remove!", Color.red);
+            return;
+        }
 
-            Destroy(GridElementScript.selectedElement.gameObject);
+        bool isActive = GridElementScript.selectedElement.isActive;
+        Destroy(GridElementScript.selectedElement.gameObject);
+        GridElementScript.selectedElement = null;
 
-            if (isActive)
+        if (isActive)
+        {
+            DisplayMessage("Successfully removed the non-approved software!", Color.green);
+
+            // Refresh the grid after removing the active element
+            if (gridInitializer != null)
             {
-                popupText.text = "Successfully removed the non-approved software!";
-                popupText.color = Color.green;
-                StartCoroutine(ShowWhitelistFeedback());
-                Debug.Log("You have successfully removed the non-approved software!");
+                gridInitializer.RefreshGrid();
             }
             else
             {
-                IncorrectGuesses++;
-                UpdateAttemptsInfo(); // Update the display
-                popupText.text = "You have removed a corporate-approved application!";
-                popupText.color = Color.red;
-                StartCoroutine(ShowWhitelistFeedback());
-                Debug.Log("Unfortunately, you have removed a corporate-approved application.");
+                Debug.LogWarning("GridInst reference is null. Cannot refresh the grid.");
             }
-
-            GridElementScript.selectedElement = null;
-            ClosePopup();
         }
         else
         {
-            Debug.LogWarning("No element is selected to remove.");
+            incorrectGuesses++;
+            DisplayMessage("You have removed a corporate-approved application!", Color.red);
         }
 
-        
+        StartCoroutine(CheckGameOver());
     }
 
-    IEnumerator ShowWhitelistFeedback()
+    private void DisplayMessage(string message, Color color)
+    {
+        popupText.text = message;
+        popupText.color = color;
+    }
+
+    private IEnumerator CheckGameOver()
     {
         yield return new WaitForSeconds(1);
         popupText.text = "";
-        UpdateAttemptsInfo();
 
-        if (IncorrectGuesses >= MaxTries)
+        if (incorrectGuesses >= MaxTries)
         {
-            popupText.text = "Game Over. You've run out of attempts.";
-            popupText.color = Color.red;
-            
+            DisplayMessage("Game Over. You've run out of attempts!", Color.red);
+            popupText.fontSize = 45;
+            gridParent.SetActive(false);
         }
     }
-    public string GetAttemptsInfo()
-    {
-        int attemptsLeft = MaxTries - IncorrectGuesses;
-        return "Incorrect Guesses Left: " + attemptsLeft;
-    }
 
-    void UpdateAttemptsInfo()
+    private void Update()
     {
-        // Update the text element with the current value of attemptsLeft
-        IncorrectGuessesLeft.text = GetAttemptsInfo();
-    }
-    void Update()
-    {
-        UpdateAttemptsInfo();
+        IncorrectGuessesLeft.text = $"Incorrect Guesses Left: {MaxTries - incorrectGuesses}";
     }
 }

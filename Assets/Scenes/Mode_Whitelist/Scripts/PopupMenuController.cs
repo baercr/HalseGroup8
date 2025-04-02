@@ -10,12 +10,20 @@ public class PopupMenuController : MonoBehaviour
 
     public TextMeshProUGUI popupText;
 
+    public TextMeshProUGUI IncorrectGuessesLeft;
+
     // Transform of the grid parent containing grid elements
     public Transform gridParent;
 
+    private int IncorrectGuesses = 0;
+
+    private int MaxTries = 5;
+
     
 
-    // Function to display the popup menu
+    
+
+  
    
 
     // Function to close the popup menu
@@ -52,6 +60,8 @@ public class PopupMenuController : MonoBehaviour
             }
             else
             {
+                IncorrectGuesses++;
+                UpdateAttemptsInfo();
                 popupText.text = "you have removed a corporate-approved application!";
                 popupText.color = Color.red;
                 StartCoroutine(ShowWhitelistFeedback());
@@ -59,9 +69,10 @@ public class PopupMenuController : MonoBehaviour
                 
             }
 
+            
+
             // Clear the selected element
             GridElementScript.selectedElement = null;
-
             // Close the popup menu
             ClosePopup();
         }
@@ -69,13 +80,30 @@ public class PopupMenuController : MonoBehaviour
         {
             Debug.LogWarning("No element is selected to remove.");
         }
+        if(IncorrectGuesses >= MaxTries)
+        {
+            popupText.text = "Game Over. You've run out of attempts.";
+            popupText.color = Color.red;
+        }
     }
     IEnumerator ShowWhitelistFeedback()
-    {
-        yield return new WaitForSeconds(1);
-        popupText.text = "";
-        
-        
-    }
+        {
+            yield return new WaitForSeconds(1);
+            popupText.text = "";
+            
+            
+        }
+
+
+    void UpdateAttemptsInfo()
+        {
+            int attemptsLeft = MaxTries-IncorrectGuesses;
+            
+            IncorrectGuessesLeft.text = "Incorrect Guesses Left: "+ IncorrectGuesses;
+        }
+    void Update()
+        {
+            UpdateAttemptsInfo();
+        }
 
 }

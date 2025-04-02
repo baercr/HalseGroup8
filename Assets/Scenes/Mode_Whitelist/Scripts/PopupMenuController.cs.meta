@@ -7,6 +7,7 @@ MonoImporter:
   - popupMenu: {fileID: 1876339291415595686, guid: e0e4469a9cadf34439ecb67dfeaf25be, type: 3}
   - popupText: {fileID: 3373087297937957916, guid: fbab85ba85534554b9146e9944946854, type: 3}
   - gridParent: {instanceID: 0}
+  - IncorrectGuessesLeft: {fileID: 7876557498115970725, guid: 6adcd4081adff3b49b328fa1a4266d66, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

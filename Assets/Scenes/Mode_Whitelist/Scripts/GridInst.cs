@@ -8,7 +8,6 @@ public class GridInst : MonoBehaviour
     public GameObject gridElement;
     public int numOfElements;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Check if gridElement is set

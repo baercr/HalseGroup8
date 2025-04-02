@@ -1,32 +1,18 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PopupMenuController : MonoBehaviour
 {
-    // Reference to the popup menu UI object
     public GameObject popupMenu;
-
     public TextMeshProUGUI popupText;
-
     public TextMeshProUGUI IncorrectGuessesLeft;
-
-    // Transform of the grid parent containing grid elements
     public Transform gridParent;
 
     private int IncorrectGuesses = 0;
-
     private int MaxTries = 5;
-
-    
-
-    
-
-  
-   
-
-    // Function to close the popup menu
+    private int attemptsLeft;
     public void ClosePopup()
     {
         if (popupMenu != null)
@@ -39,21 +25,17 @@ public class PopupMenuController : MonoBehaviour
         }
     }
 
-    // Function to remove the selected grid element
     public void RemoveSelectedElement()
     {
         if (GridElementScript.selectedElement != null)
         {
-            // Determine if the selected element is active or inactive
             bool isActive = GridElementScript.selectedElement.isActive;
 
-            // Destroy the selected grid element
             Destroy(GridElementScript.selectedElement.gameObject);
 
-            // Display a message based on the state of the removed element
             if (isActive)
             {
-                popupText.text = "successfully removed the non-approved software!";
+                popupText.text = "Successfully removed the non-approved software!";
                 popupText.color = Color.green;
                 StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("You have successfully removed the non-approved software!");
@@ -61,49 +43,50 @@ public class PopupMenuController : MonoBehaviour
             else
             {
                 IncorrectGuesses++;
-                UpdateAttemptsInfo();
-                popupText.text = "you have removed a corporate-approved application!";
+                UpdateAttemptsInfo(); // Update the display
+                popupText.text = "You have removed a corporate-approved application!";
                 popupText.color = Color.red;
                 StartCoroutine(ShowWhitelistFeedback());
                 Debug.Log("Unfortunately, you have removed a corporate-approved application.");
-                
             }
 
-            
-
-            // Clear the selected element
             GridElementScript.selectedElement = null;
-            // Close the popup menu
             ClosePopup();
         }
         else
         {
             Debug.LogWarning("No element is selected to remove.");
         }
-        if(IncorrectGuesses >= MaxTries)
+
+        
+    }
+
+    IEnumerator ShowWhitelistFeedback()
+    {
+        yield return new WaitForSeconds(1);
+        popupText.text = "";
+        UpdateAttemptsInfo();
+
+        if (IncorrectGuesses >= MaxTries)
         {
             popupText.text = "Game Over. You've run out of attempts.";
             popupText.color = Color.red;
+            
         }
     }
-    IEnumerator ShowWhitelistFeedback()
-        {
-            yield return new WaitForSeconds(1);
-            popupText.text = "";
-            
-            
-        }
-
+    public string GetAttemptsInfo()
+    {
+        int attemptsLeft = MaxTries - IncorrectGuesses;
+        return "Incorrect Guesses Left: " + attemptsLeft;
+    }
 
     void UpdateAttemptsInfo()
-        {
-            int attemptsLeft = MaxTries-IncorrectGuesses;
-            
-            IncorrectGuessesLeft.text = "Incorrect Guesses Left: "+ IncorrectGuesses;
-        }
+    {
+        // Update the text element with the current value of attemptsLeft
+        IncorrectGuessesLeft.text = GetAttemptsInfo();
+    }
     void Update()
-        {
-            UpdateAttemptsInfo();
-        }
-
+    {
+        UpdateAttemptsInfo();
+    }
 }

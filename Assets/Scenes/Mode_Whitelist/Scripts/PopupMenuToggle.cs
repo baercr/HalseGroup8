@@ -39,13 +39,13 @@ public class PopupMenuToggle : MonoBehaviour, IPopupMenuToggle
             popupmenu.SetActive(true);
 
             // Convert screen position to world position in the canvas
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+               /* RectTransformUtility.ScreenPointToWorldPointInRectangle(
                 popupmenu.GetComponentInParent<Canvas>().transform as RectTransform,
                 screenPosition,
                 Camera.main,
                 out Vector3 worldPosition);
 
-            popupmenu.transform.position = worldPosition;
+                popupmenu.transform.position = worldPosition;*/
         }
         else
         {

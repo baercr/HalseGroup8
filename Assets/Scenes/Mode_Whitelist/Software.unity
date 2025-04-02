@@ -4739,6 +4739,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoftwareWhitelist
       objectReference: {fileID: 0}
+    - target: {fileID: 1378246153475616937, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168475214362479178, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4978222783809858989, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: popupMenu
       value: 
@@ -4761,15 +4769,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5621693730563513602, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 5621693730563513602, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 675
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669385454099767576, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772802337364958782, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7308543083662619702, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308543083662619702, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7604699181974635131, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AnchoredPosition.y

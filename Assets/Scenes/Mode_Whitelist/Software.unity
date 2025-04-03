@@ -2710,7 +2710,7 @@ PrefabInstance:
     - target: {fileID: 4978222783809858989, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: IncorrectGuessesLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1713283779}
     - target: {fileID: 5093387799045593281, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -2902,7 +2902,7 @@ PrefabInstance:
     - target: {fileID: 8725814237558087564, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: IncorrectGuessesLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1713283779}
     - target: {fileID: 9033981593822886510, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: popupMenu
       value: 

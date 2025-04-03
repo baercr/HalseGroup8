@@ -4,18 +4,31 @@ using TMPro;
 
 public class PopupMenuController : MonoBehaviour
 {
-    public GameObject popupMenu;            // Popup menu object
-    public TextMeshProUGUI popupText;       // Feedback text
-    public TextMeshProUGUI IncorrectGuessesLeft; // Remaining guess counter
-    public GameObject gridParent;          // Parent object of grid
-    public GridInst gridInitializer;       // Reference to GridInst for grid operations
+    public GameObject popupMenu;                 // Popup menu object
+    public TextMeshProUGUI popupText;            // Feedback text
+    public TextMeshProUGUI IncorrectGuessesLeft; // Remaining guesses UI text
+    public GameObject gridParent;               // Parent object of the grid
+    public GridInst gridInitializer;            // Reference to GridInst
 
-    private int incorrectGuesses = 0;      // Track incorrect removals
-    private const int MaxTries = 3;        // Maximum incorrect attempts
+    private int incorrectGuesses = 0;           // Tracks incorrect removals
+    private const int MaxTries = 7;             // Maximum incorrect attempts
+
+    private void Start()
+    {
+        // Initialize the incorrect guesses text when the game starts
+        UpdateIncorrectGuessesText();
+    }
 
     public void ClosePopup()
     {
-        popupMenu?.SetActive(false);
+        if (popupMenu != null)
+        {
+            popupMenu.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Popup menu reference is null.");
+        }
     }
 
     public void RemoveSelectedElement()
@@ -34,29 +47,44 @@ public class PopupMenuController : MonoBehaviour
         {
             DisplayMessage("Successfully removed the non-approved software!", Color.green);
 
-            // Refresh the grid after removing the active element
-            if (gridInitializer != null)
-            {
-                gridInitializer.RefreshGrid();
-            }
-            else
-            {
-                Debug.LogWarning("GridInst reference is null. Cannot refresh the grid.");
-            }
+            // Refresh the grid after removing an active element
+            gridInitializer?.RefreshGrid();
         }
         else
         {
-            incorrectGuesses++;
+            incorrectGuesses++; // Increment incorrect guesses
+            UpdateIncorrectGuessesText(); // Update UI text
             DisplayMessage("You have removed a corporate-approved application!", Color.red);
         }
 
         StartCoroutine(CheckGameOver());
     }
 
+    private void UpdateIncorrectGuessesText()
+    {
+        if (IncorrectGuessesLeft != null)
+        {
+            // Update the text to reflect remaining attempts
+            IncorrectGuessesLeft.text = $"Incorrect Guesses Left: {MaxTries - incorrectGuesses}";
+            Debug.Log($"IncorrectGuessesLeft updated: {IncorrectGuessesLeft.text}");
+        }
+        else
+        {
+            Debug.LogError("IncorrectGuessesLeft TextMeshPro reference is missing in the Inspector!");
+        }
+    }
+
     private void DisplayMessage(string message, Color color)
     {
-        popupText.text = message;
-        popupText.color = color;
+        if (popupText != null)
+        {
+            popupText.text = message;
+            popupText.color = color;
+        }
+        else
+        {
+            Debug.LogError("popupText reference is missing!");
+        }
     }
 
     private IEnumerator CheckGameOver()
@@ -70,10 +98,5 @@ public class PopupMenuController : MonoBehaviour
             popupText.fontSize = 45;
             gridParent.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        IncorrectGuessesLeft.text = $"Incorrect Guesses Left: {MaxTries - incorrectGuesses}";
     }
 }

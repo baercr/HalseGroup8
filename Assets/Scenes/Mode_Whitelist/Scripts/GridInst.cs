@@ -9,15 +9,13 @@ public class GridInst : MonoBehaviour
 
     public void Start()
     {
-        RefreshGrid(); // Ensure the grid initializes properly
+        RefreshGrid();
     }
 
     public void RefreshGrid()
     {
-        // Log the RefreshGrid call for debugging
-        Debug.Log("Refreshing the grid...");
+    
 
-        // Destroy all current child objects
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
@@ -51,7 +49,5 @@ public class GridInst : MonoBehaviour
                 elementScript.isActive = (i == trueIndex);
             }
         }
-
-        Debug.Log("Grid generation completed.");
     }
 }

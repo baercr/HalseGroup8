@@ -2710,7 +2710,7 @@ PrefabInstance:
     - target: {fileID: 4978222783809858989, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: IncorrectGuessesLeft
       value: 
-      objectReference: {fileID: 1713283779}
+      objectReference: {fileID: 0}
     - target: {fileID: 5093387799045593281, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -2902,7 +2902,7 @@ PrefabInstance:
     - target: {fileID: 8725814237558087564, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: IncorrectGuessesLeft
       value: 
-      objectReference: {fileID: 7876557498115970725, guid: 6adcd4081adff3b49b328fa1a4266d66, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 9033981593822886510, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: popupMenu
       value: 
@@ -2915,6 +2915,10 @@ PrefabInstance:
       propertyPath: gridParent
       value: 
       objectReference: {fileID: 62070808}
+    - target: {fileID: 9033981593822886510, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
+      propertyPath: gridInitializer
+      value: 
+      objectReference: {fileID: 1805564496}
     - target: {fileID: 9033981593822886510, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: gridElementPrefab
       value: 
@@ -2930,7 +2934,7 @@ PrefabInstance:
     - target: {fileID: 9033981593822886510, guid: fa4b3cae712eba2419a370cc6fcfcdd4, type: 3}
       propertyPath: IncorrectGuessesLeft
       value: 
-      objectReference: {fileID: 7876557498115970725, guid: 6adcd4081adff3b49b328fa1a4266d66, type: 3}
+      objectReference: {fileID: 1713283779}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

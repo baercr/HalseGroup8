@@ -25,6 +25,8 @@ public class Interpreter : MonoBehaviour
     public string ipPlayer;
     public string ipToDelete;
 
+    bool isDeleted;
+
     public void Start()
     {
         ipPlayer = CreateIP();
@@ -89,9 +91,9 @@ public class Interpreter : MonoBehaviour
         }
 
 
-        //ARP ADMIN
+        //ARP ADMIN IP NOT DELETED
         //
-        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a")
+        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a" && !isDeleted)
         {
             response.Add(" \r\n\r\n\r\n" +
                 "Internet Address       Type\r\n  " +
@@ -106,6 +108,21 @@ public class Interpreter : MonoBehaviour
             return response;
         }
 
+        //ARP ADMIN IP DELETED
+        //
+        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-a" && isDeleted)
+        {
+            response.Add(" \r\n\r\n\r\n" +
+                "Internet Address       Type\r\n  " +
+                "192.168.86.1           dynamic \r\n  " +
+                ipPlayer + "           dynamic \r\n  ");
+
+            response.Add("");
+            response.Add("");
+            response.Add("");
+
+            return response;
+        }
 
         //ARP IPDISCONNECT NO ADMIN
         //
@@ -119,9 +136,10 @@ public class Interpreter : MonoBehaviour
 
         //ARP IPDISCONNECT ADMIN
         //
-        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-ipdisconnect")
+        if (args[0] == "sudo" && args[1] == "arp" && args[2] == "-ipdisconnect" && args[3] == ipToDelete)
         {
-            response.Add("");
+            isDeleted = true;
+            response.Add("IP address " + ipToDelete + " has been disconnected.");
 
             return response;
         }

@@ -16,13 +16,13 @@ public class PopupMenuToggle : MonoBehaviour, IPopupMenuToggle
     private void Update()
     {
         // Check for a right-click event
-        if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
+        if (Input.GetMouseButtonDown(1)) 
         {
             ShowPopup(Input.mousePosition);
         }
 
         // Check for a left-click event and close the popup if the click is outside
-        if (Input.GetMouseButtonDown(0)) // 0 corresponds to the left mouse button
+        if (Input.GetMouseButtonDown(0)) 
         {
             if (popupmenu.activeSelf && !IsPointerOverUIElement())
             {
@@ -37,15 +37,6 @@ public class PopupMenuToggle : MonoBehaviour, IPopupMenuToggle
         if (popupmenu != null)
         {
             popupmenu.SetActive(true);
-
-            // Convert screen position to world position in the canvas
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                popupmenu.GetComponentInParent<Canvas>().transform as RectTransform,
-                screenPosition,
-                Camera.main,
-                out Vector3 worldPosition);
-
-            popupmenu.transform.position = worldPosition;
         }
         else
         {

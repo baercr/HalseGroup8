@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupMenu: {fileID: 1876339291415595686}
-  popupText: {fileID: 889727037270559760, guid: 7c08f3f2fea8a5f4e83dafeea178f5a1, type: 3}
+  popupText: {fileID: 0}
+  IncorrectGuessesLeft: {fileID: 0}
   gridParent: {fileID: 0}
 --- !u!1 &2493554130575204526
 GameObject:
@@ -282,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupMenu: {fileID: 1876339291415595686}
-  popupText: {fileID: 889727037270559760, guid: 7c08f3f2fea8a5f4e83dafeea178f5a1, type: 3}
+  popupText: {fileID: 0}
+  IncorrectGuessesLeft: {fileID: 0}
   gridParent: {fileID: 0}
 --- !u!1 &3587826953380716424
 GameObject:
@@ -699,5 +701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupMenu: {fileID: 1876339291415595686}
-  popupText: {fileID: 889727037270559760, guid: 7c08f3f2fea8a5f4e83dafeea178f5a1, type: 3}
+  popupText: {fileID: 0}
+  IncorrectGuessesLeft: {fileID: 0}
   gridParent: {fileID: 0}

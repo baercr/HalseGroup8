@@ -1,24 +1,24 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using TMPro;
 
 public class PopupMenuController : MonoBehaviour
 {
-    // Reference to the popup menu UI object
-    public GameObject popupMenu;
+    public GameObject popupMenu;                 // Popup menu object
+    public TextMeshProUGUI popupText;            // Feedback text
+    public TextMeshProUGUI IncorrectGuessesLeft; // Remaining guesses UI text
+    public GameObject gridParent;               // Parent object of the grid
+    public GridInst gridInitializer;            // Reference to GridInst
 
-    public TextMeshProUGUI popupText;
+    private int incorrectGuesses = 0;           // Tracks incorrect removals
+    private const int MaxTries = 7;             // Maximum incorrect attempts
 
-    // Transform of the grid parent containing grid elements
-    public Transform gridParent;
+    private void Start()
+    {
+        // Initialize the incorrect guesses text when the game starts
+        UpdateIncorrectGuessesText();
+    }
 
-    
-
-    // Function to display the popup menu
-   
-
-    // Function to close the popup menu
     public void ClosePopup()
     {
         if (popupMenu != null)
@@ -31,51 +31,72 @@ public class PopupMenuController : MonoBehaviour
         }
     }
 
-    // Function to remove the selected grid element
     public void RemoveSelectedElement()
     {
-        if (GridElementScript.selectedElement != null)
+        if (GridElementScript.selectedElement == null)
         {
-            // Determine if the selected element is active or inactive
-            bool isActive = GridElementScript.selectedElement.isActive;
+            DisplayMessage("No App was selected to remove!", Color.red);
+            return;
+        }
 
-            // Destroy the selected grid element
-            Destroy(GridElementScript.selectedElement.gameObject);
+        bool isActive = GridElementScript.selectedElement.isActive;
+        Destroy(GridElementScript.selectedElement.gameObject);
+        GridElementScript.selectedElement = null;
 
-            // Display a message based on the state of the removed element
-            if (isActive)
-            {
-                popupText.text = "successfully removed the non-approved software!";
-                popupText.color = Color.green;
-                StartCoroutine(ShowWhitelistFeedback());
-                Debug.Log("You have successfully removed the non-approved software!");
-            }
-            else
-            {
-                popupText.text = "you have removed a corporate-approved application!";
-                popupText.color = Color.red;
-                StartCoroutine(ShowWhitelistFeedback());
-                Debug.Log("Unfortunately, you have removed a corporate-approved application.");
-                
-            }
+        if (isActive)
+        {
+            DisplayMessage("Successfully removed the non-approved software!", Color.green);
 
-            // Clear the selected element
-            GridElementScript.selectedElement = null;
-
-            // Close the popup menu
-            ClosePopup();
+            // Refresh the grid after removing an active element
+            gridInitializer?.RefreshGrid();
         }
         else
         {
-            Debug.LogWarning("No element is selected to remove.");
+            incorrectGuesses++; // Increment incorrect guesses
+            UpdateIncorrectGuessesText(); // Update UI text
+            DisplayMessage("You have removed a corporate-approved application!", Color.red);
+        }
+
+        StartCoroutine(CheckGameOver());
+    }
+
+    private void UpdateIncorrectGuessesText()
+    {
+        if (IncorrectGuessesLeft != null)
+        {
+            // Update the text to reflect remaining attempts
+            IncorrectGuessesLeft.text = $"Incorrect Guesses Left: {MaxTries - incorrectGuesses}";
+            Debug.Log($"IncorrectGuessesLeft updated: {IncorrectGuessesLeft.text}");
+        }
+        else
+        {
+            Debug.LogError("IncorrectGuessesLeft TextMeshPro reference is missing in the Inspector!");
         }
     }
-    IEnumerator ShowWhitelistFeedback()
+
+    private void DisplayMessage(string message, Color color)
+    {
+        if (popupText != null)
+        {
+            popupText.text = message;
+            popupText.color = color;
+        }
+        else
+        {
+            Debug.LogError("popupText reference is missing!");
+        }
+    }
+
+    private IEnumerator CheckGameOver()
     {
         yield return new WaitForSeconds(1);
         popupText.text = "";
-        
-        
-    }
 
+        if (incorrectGuesses >= MaxTries)
+        {
+            DisplayMessage("Game Over. You've run out of attempts!", Color.red);
+            popupText.fontSize = 45;
+            gridParent.SetActive(false);
+        }
+    }
 }

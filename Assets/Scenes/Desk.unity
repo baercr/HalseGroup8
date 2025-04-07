@@ -1026,8 +1026,13 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 0.5}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -6.18, y: 2.7864532}
   m_SizeDelta: {x: 127.652466, y: 120}
+=======
+  m_AnchoredPosition: {x: 290.9994, y: 146.00024}
+  m_SizeDelta: {x: -1771.1576, y: 120}
+>>>>>>> Stashed changes
 =======
   m_AnchoredPosition: {x: 290.9994, y: 146.00024}
   m_SizeDelta: {x: -1771.1576, y: 120}
@@ -1720,6 +1725,9 @@ RectTransform:
   - {fileID: 564559486}
   m_Father: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1855,8 +1863,14 @@ RectTransform:
   m_Children:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 564559486}
   - {fileID: 584848727}
+=======
+  - {fileID: 1767795186}
+  - {fileID: 177868070}
+  - {fileID: 336013820}
+>>>>>>> Stashed changes
 =======
   - {fileID: 1767795186}
   - {fileID: 177868070}

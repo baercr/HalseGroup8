@@ -23,12 +23,15 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            NextLine();
-        }
-        else
-        {
-            StopAllCoroutines();
-            textComponent.text = lines[index];
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
         }
     }
 
@@ -61,3 +64,4 @@ public class Dialogue : MonoBehaviour
         }
     }
 }
+

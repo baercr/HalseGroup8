@@ -15,6 +15,11 @@ public class SceneController : MonoBehaviour
         Application.Quit();            // Quits Game, will not quit if running from editor
     }
 
+    public void OnButtonDesk()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void OnButtonTerminal()
     {
         SceneManager.LoadScene(2);

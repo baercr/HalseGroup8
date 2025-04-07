@@ -1468,7 +1468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &573490997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4388,8 +4388,10 @@ MonoBehaviour:
   lines:
   - This is the VPN logs screen. Here you will utilize the guidelines within the
     SOP announcement to confirm approved employees.
-  - If the employee has employee credentials and location, approve them. If not,
-    you have received a false positive and should mark the account for removal.
+  - In Cybersecurity, a True Positive (TP) statement, means the given report was
+    accurately flagged.
+  - Whereas a False Positive (FP) statement is a report that wasn't needed to be
+    reported.
   textSpeed: 0.05
 --- !u!114 &1924128221
 MonoBehaviour:

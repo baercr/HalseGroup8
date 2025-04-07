@@ -142,7 +142,7 @@ public class ProfileValidator : MonoBehaviour
     public string GetAttemptsInfo()
     {
         int remmainingAttempts = maxAttempts - incorrectGuesses;
-        return "Remaing Attempts: " + remmainingAttempts + "\nCorrect Guesses: " + correctGuesses;
+        return "Remaining Attempts: " + remmainingAttempts + "\nCorrect Guesses: " + correctGuesses;
     }
 
     void UpdateAttemptsInfo()

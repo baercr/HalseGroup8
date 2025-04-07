@@ -90,7 +90,6 @@ public class RandomSample : MonoBehaviour
 		if(component.sprite == null)
 		{
 			component.sprite = defaultSprite;
-			Debug.LogWarning("Using default sprite");
 		}
 	}
 }
